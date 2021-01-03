@@ -1,0 +1,39 @@
+.Title Bandgap
+.SUBCKT OTA_bandgap Idc_10u gnda out vdda vin vip
+MNM3 out net17 gnda gnda n33 W=3u L=700n m=2
+MNM1 net13 net13 gnda gnda n33 W=5u L=1u m=1
+MNM0 net17 net13 gnda gnda n33 W=5u L=1u m=1
+MPM4 out Idc_10u vdda vdda p33 W=3u L=1u m=4
+MPM3 net17 v1p net32 vdda p33 W=20u L=2000n m=4
+MPM2 net13 vin net32 vdda p33 W=20u L=2000n m=4
+MPM1 Idc_10u Idc_10u vdda vdda p33 W=3u L=1u m=4
+MPM0 net32 Idc_10u vdda vdda p33 W=3u L=1u m=6
+CC0 out net9 mim w=20u l=20u M=3
+RR0 net9 net17 rpposab w=1u l=40u
+.ENDS
+
+
+.SUBCKT Bandgap gnda vdda vref
+RR3 net_081 net073 9.67K 
+RR4 vref net070 48K
+QQ3 gnda net_095 net1 pnp33a25 AREA=1
+QQ4 gnda net_088 net073 pnp33a25 AREA=7
+QQ5 gnda gnda net070 pnp33a25 AREA=1
+QQ1 gnda gnda net_088 pnp33a25 AREA=7
+QQ0 gnda gnda net_095 pnp33a25 AREA=1
+MNM6 ot net_084 gnda gnda n33 W=2u L=1u m=4
+MNM5 net_084 net1 gnda gnda n33 W=2u L=1u m=1
+MNM4 net6 net10 gnda gnda n33 W=2u L=1u m=4
+MNM3 net10 net10 gnda gnda n33 W=2u L=1u m=4
+MM1 net_095 ot vdda vdda p33 W=5u L=2u m=3
+MM2 net_088 ot vdda vdda p33 W=5u L=2u m=3
+MM3 net10 ot vdda vdda p33 W=5u L=2u m=3
+MPM11 net_0120 net_0120 vdda vdda p33 W=6u L=1u m=1
+MM0 net 0116 net_0116 net_0133 vdda p33 W=6u L=1u m=1
+MPM13 net_084 net1 net_0116 vdda p33 W=6u L=1u m=1
+MPM12 net_0133 net_0133 net_0120 vdda p33 W=6u L=1u m=1
+MPM5 vref ot vdda vdda p33 W=5u L=2u m=3
+MPM4 net_081 ot vdda vdda p33 W=5u L=2u m=3
+MPM3 net1 ot vdda vdda p33 W=5u L=2u m=3
+XI0 net6 gnda ot vdda net1 net_081 / OTA_bandgap
+.ENDS

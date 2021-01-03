@@ -1,0 +1,105 @@
+************************************************
+* 　　　　模拟电路基础：                        
+* 　　　　　　从系统级到电路级                  
+************************************************
+* 　　　　陈抗生　周金芳                        
+************************************************
+* 　　　　科学出版社　2020                      
+************************************************          
+*
+* CMOS inverter
+.subckt INV vdda gnda  in out 
+MPM2 out in vdda vdda p18 W=4u L=180n m=1
+MNM1 out in gnda gnda n18 W=2u L=180n m=1
+.ends
+
+* CMOS inverter with larger delay
+.subckt INV2 vdda gnda  in out 
+MPM2 out in vdda vdda p18 W=20u L=900n m=1
+MNM1 out in gnda gnda n18 W=10u L=900n m=1
+.ends
+
+* CMOS inverter with further larger delay based on INV2 (5x of W&L)
+* 10x larger of delay
+* clk1d 相对于 clk1，下降沿延迟约2.3ns
+* 如果基于INV，下降沿延迟约0.25ns
+.subckt INV1 vdda gnda  in out 
+x1 vdda gnda  in    net01 / INV2
+x2 vdda gnda  net01 net02 / INV2 
+x3 vdda gnda  net02 net03 / INV2
+x4 vdda gnda  net03 net04 / INV2 
+x5 vdda gnda  net04 net05 / INV2 
+x6 vdda gnda  net05 net06 / INV2 
+x7 vdda gnda  net06 out   / INV2 
+.ends
+
+* CMOS switch
+.subckt SWITCHb vdda gnda  s  in out 
+x1 vdda gnda  s s_inv / INV
+m1 out s     in gnda n18 W=2u L=180n m=1
+m2 out s_inv in vdda p18 W=4u L=180n m=1
+.ends
+
+* CMOS nand
+.SUBCKT NAND vdda gnda  A B out
+MPM2 out A vdda vdda p18 W=4u L=180n m=1
+MPM1 out B vdda vdda p18 W=4u L=180n m=1
+MNM1 net01 B gnda gnda n18 W=2u L=180n m=1
+MNM2 out A net01 gnda n18 W=2u L=180n m=1
+.ENDS
+
+* CMOS and
+.SUBCKT AND vdda gnda  A B out
+x1 vdda gnda  A B  outn / NAND
+x2 vdda gnda  outn out  / INV 
+.ENDS
+
+* CMOS buffer
+.SUBCKT buffer vdda gnda in out
+x1 vdda gnda  in  in_inv / INV
+x2 vdda gnda  in_inv out / INV 
+.ENDS
+
+* non-overlap clock generation
+.subckt CLOCKb vdda gnda  clkin clk1 clk1d clk2 clk2d
+xa1  vdda gnda clkin net05 net01  / NAND
+xa2  vdda gnda net01 net03 net04  / NAND
+xa3  vdda gnda net06 net07 net08  / NAND
+xa4  vdda gnda net08 net10 net11  / NAND
+
+xi1  vdda gnda net01 net02        / INV
+xi2  vdda gnda net02 net03        / INV1
+xi3  vdda gnda net08 net09        / INV
+xi4  vdda gnda net09 net10        / INV1
+xi5  vdda gnda clk2d net05        / INV1
+xi6  vdda gnda clk1d net06        / INV1
+xi7  vdda gnda clkin net07        / INV
+
+xb1  vdda gnda net02 clk1         / BUFFER  
+xb2  vdda gnda net04 clk1d        / BUFFER  
+xb3  vdda gnda net09 clk2         / BUFFER  
+xb4  vdda gnda net11 clk2d        / BUFFER  
+.ends
+
+* latch comparator
+* if vip>vin then voutp=HIGH voutn=LOW
+* if vip<vin then voutp=LOW  voutn=HIGH
+.SUBCKT comparator vdda gnda clk vip vin voutp voutn
+xa1 vdda gnda net01  voutn voutp  / NAND
+xa2 vdda gnda net02  voutp voutn  / NAND
+
+MM1 net03 vip   gnda gnda n18 W=20u L=180n m=1
+MM2 net03 net04 gnda gnda n18 W=20u L=180n m=1
+MM3 net04 net03 gnda gnda n18 W=20u L=180n m=1
+MM4 net04 vin   gnda gnda n18 W=20u L=180n m=1
+
+MM5 net01 clk net03 gnda n18 W=30u L=180n m=1
+MM6 net02 clk net04 gnda n18 W=30u L=180n m=1
+
+MM7 net01 clk   vdda vdda p18 W=60u L=180n m=1
+MM8 net01 net02 vdda vdda p18 W=60u L=180n m=1
+MM9 net02 net01 vdda vdda p18 W=60u L=180n m=1
+MM10 net02 clk  vdda vdda p18 W=60u L=180n m=1
+.ENDS
+
+

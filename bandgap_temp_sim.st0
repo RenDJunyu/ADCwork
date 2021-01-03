@@ -1,0 +1,90 @@
+***** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******
+ Input File: bandgap_temp_sim.sp
+ lic:
+ lic: FLEXlm: v10.8
+ lic: USER:   86184                HOSTNAME: PC2line
+ lic: HOSTID: "e86a64c8f38a 00ff6e5bbc8f 485f9955e58d 4a5f9955e58d ca5f9955e58d"
+ lic: Using FLEXlm license file:
+ lic: D:\HSPICE\license1.dat
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 31-dec-2030/2030.12
+ lic: NODE LOCKED license on hostid "e86a64c8f38a 00ff6e5bbc8f 485f9955e58d 4a5f
+ lic:
+ init: begin read circuit files,  cpu clock=  8.40E-01
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option search   = D:\HSPICE\hspice\PARTS\XILINX\
+       option search   = D:\HSPICE\hspice\PARTS\TLINE\
+       option search   = D:\HSPICE\hspice\PARTS\TI\
+       option search   = D:\HSPICE\hspice\PARTS\SIGNET\
+       option search   = D:\HSPICE\hspice\PARTS\PCI\
+       option search   = D:\HSPICE\hspice\PARTS\LIN_TECH\
+       option search   = D:\HSPICE\hspice\PARTS\FET\
+       option search   = D:\HSPICE\hspice\PARTS\DIO\
+       option search   = D:\HSPICE\hspice\PARTS\COMLINE\
+       option search   = D:\HSPICE\hspice\PARTS\BURR_BRN\
+       option search   = D:\HSPICE\hspice\PARTS\BJT\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option post     =     2.00
+       option runlvl
+       option post
+       option accura
+       option probe
+ init: end read circuit files,  cpu clock=  9.59E-01 memory=    293 kb
+ init: begin check errors,  cpu clock=  9.59E-01
+>error          ***** hspice job aborted
+ init: begin read circuit files,  cpu clock=  1.01E+00
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option search   = D:\HSPICE\hspice\PARTS\XILINX\
+       option search   = D:\HSPICE\hspice\PARTS\TLINE\
+       option search   = D:\HSPICE\hspice\PARTS\TI\
+       option search   = D:\HSPICE\hspice\PARTS\SIGNET\
+       option search   = D:\HSPICE\hspice\PARTS\PCI\
+       option search   = D:\HSPICE\hspice\PARTS\LIN_TECH\
+       option search   = D:\HSPICE\hspice\PARTS\FET\
+       option search   = D:\HSPICE\hspice\PARTS\DIO\
+       option search   = D:\HSPICE\hspice\PARTS\COMLINE\
+       option search   = D:\HSPICE\hspice\PARTS\BURR_BRN\
+       option search   = D:\HSPICE\hspice\PARTS\BJT\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option post     =     2.00
+       option runlvl
+       option post
+       option accura
+       option probe
+ init: end read circuit files,  cpu clock=  1.12E+00 memory=    293 kb
+ init: begin check errors,  cpu clock=  1.12E+00
+difficulty in reading input
+>error          ***** hspice job aborted
+ init: begin read circuit files,  cpu clock=  1.18E+00
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option search   = D:\HSPICE\hspice\PARTS\XILINX\
+       option search   = D:\HSPICE\hspice\PARTS\TLINE\
+       option search   = D:\HSPICE\hspice\PARTS\TI\
+       option search   = D:\HSPICE\hspice\PARTS\SIGNET\
+       option search   = D:\HSPICE\hspice\PARTS\PCI\
+       option search   = D:\HSPICE\hspice\PARTS\LIN_TECH\
+       option search   = D:\HSPICE\hspice\PARTS\FET\
+       option search   = D:\HSPICE\hspice\PARTS\DIO\
+       option search   = D:\HSPICE\hspice\PARTS\COMLINE\
+       option search   = D:\HSPICE\hspice\PARTS\BURR_BRN\
+       option search   = D:\HSPICE\hspice\PARTS\BJT\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option post     =     2.00
+       option runlvl
+       option post
+       option accura
+       option probe
+ init: end read circuit files,  cpu clock=  1.28E+00 memory=    284 kb
+ init: begin check errors,  cpu clock=  1.28E+00
+difficulty in reading input
+>error          ***** hspice job aborted
+ lic: Release hspice token(s)

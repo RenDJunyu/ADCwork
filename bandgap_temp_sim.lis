@@ -1,0 +1,170 @@
+ ****** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******                   
+  Copyright (C) 2011 Synopsys, Inc. All Rights Reserved.                        
+  Unpublished-rights reserved under US copyright laws.
+  This program is protected by law and is subject to the
+  terms and conditions of the license agreement from Synopsys.
+  Use of this program is your acceptance to be bound by the
+  license agreement. HSPICE is the trademark of Synopsys, Inc.
+  Input File: bandgap_temp_sim.sp                                               
+  Command line options: bandgap_temp_sim.sp -o
+  lic:  
+  lic: FLEXlm: v10.8 
+  lic: USER:   86184                HOSTNAME: PC2line 
+  lic: HOSTID: "e86a64c8f38a 00ff6e5bbc8f 485f9955e58d 4a5f9955e58d ca5f9955e58d
+ "
+  lic: Using FLEXlm license file: 
+  lic: D:\HSPICE\license1.dat 
+  lic: Checkout 1 hspice 
+  lic: License/Maintenance for hspice will expire on 31-dec-2030/2030.12 
+  lic: NODE LOCKED license on hostid "e86a64c8f38a 00ff6e5bbc8f 485f9955e58d 4a5
+ f
+  lic:   
+ Init: read install configuration file: D:\HSPICE\hspice\meta.cfg
+
+ **warning**  runlvl smaller than 5, reset to 5  when accurate turned on
+  **warning** (models\ms018.mdl:208) Model n33 device geometries will not be checked against the limits set by lmin, lmax, wmin and wmax. To enable this check, add a period(.) to the model name(i.e. enable model selector).
+
+ **warning**  runlvl smaller than 5, reset to 5  when accurate turned on
+  **error** (models\Bandgap.cdl:11) Undefined parameter or function definition "mim" for cc0. Please enter a defined name.
+
+          ***** job aborted
+1****** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******                   
+ ******  
+ bandgap
+
+  ******  job statistics summary tnom=  25.000 temp=  25.000 *****
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :     8
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =       0 # elements   =      33
+  # resistors   =       3 # capacitors =       1 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       2
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       5
+  # jfets       =       0 # mosfets    =      22 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           0
+  readin             0.14
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used         59.21 megabytes
+           total cpu time            0.16 seconds
+           total elapsed time        0.98 seconds
+           job started at     22:04:36 01/03/2021
+           job ended   at     22:04:37 01/03/2021
+
+
+
+ **warning**  runlvl smaller than 5, reset to 5  when accurate turned on
+  **warning** (models\ms018.mdl:208) Model n33 device geometries will not be checked against the limits set by lmin, lmax, wmin and wmax. To enable this check, add a period(.) to the model name(i.e. enable model selector).
+ **error** above line attempts to redefine n18
+  **error** (models\ms018.mdl:33) difficulty in reading input
+
+          ***** job aborted
+1****** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******                   
+ ******  
+ .title bandgap psrr spice test program(ss)
+
+  ******  job statistics summary tnom=  25.000 temp=  25.000 *****
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :     8
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =       0 # elements   =       2
+  # resistors   =       0 # capacitors =       0 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       2
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           0
+  readin             0.13
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used         59.51 megabytes
+           total cpu time            0.15 seconds
+           total elapsed time        0.16 seconds
+           job started at     22:04:36 01/03/2021
+           job ended   at     22:04:37 01/03/2021
+
+
+
+ **warning**  runlvl smaller than 5, reset to 5  when accurate turned on
+  **error** (bandgap_temp_sim.sp:12)  measure name max_value        conflicts with existing parameter definition, please rename measure statement
+  **error** (bandgap_temp_sim.sp:12) difficulty in reading input
+
+          ***** job aborted
+1****** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******                   
+ ******  
+ bandgap
+
+  ******  job statistics summary tnom=  25.000 temp=  25.000 *****
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :     8
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =       0 # elements   =       1
+  # resistors   =       0 # capacitors =       0 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       1
+  # curr_srcs   =       0 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =       0 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.00           1           0
+  readin             0.12
+  errchk             0.00
+  setup              0.00
+  output             0.00
+
+
+           peak memory used         60.21 megabytes
+           total cpu time            0.14 seconds
+           total elapsed time        0.17 seconds
+           job started at     22:04:36 01/03/2021
+           job ended   at     22:04:37 01/03/2021
+
+
+  lic: Release hspice token(s) 
