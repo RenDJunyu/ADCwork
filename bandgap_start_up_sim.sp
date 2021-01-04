@@ -32,7 +32,7 @@ v2 gnda 0 0
 .del lib 'models\ms018_v1p7.lib' bjt_ss
 
 .lib 'models\ms018_v1p7.lib' ff
-.lib 'models\ms018_v1p7.lib1' res_ff
-.lib 'models\ms018_v1p7.lib1' mim_ff
+.lib 'models\ms018_v1p7.lib' res_ff
+.lib 'models\ms018_v1p7.lib' mim_ff
 .lib 'models\ms018_v1p7.lib' bjt_ff
 .end
