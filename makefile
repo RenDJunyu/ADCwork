@@ -21,3 +21,8 @@ clean:
 aclean:
 	make clean
 	del $(TARGET).lis $(TARGET).st0 $(TARGET).sw0 $(TARGET).ac0 $(TARGET).tr0 $(TARGET).m
+
+ACP:
+	git add .
+	git commit -a -m 'full'
+	git push orgin master
