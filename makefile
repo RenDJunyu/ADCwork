@@ -22,7 +22,4 @@ aclean:
 	make clean
 	del $(TARGET).lis $(TARGET).st* $(TARGET).sw* $(TARGET).ac* $(TARGET).tr* $(TARGET).m
 
-ACP:
-	git add .
-	git commit -a -m 'full'
-	git push origin master
+
