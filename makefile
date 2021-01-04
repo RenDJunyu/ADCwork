@@ -1,6 +1,6 @@
 PATH := D:\HSPICE\hspice\BIN
 CFLAG := -o
-TARGET := bandgap_temp_sim
+TARGET := bandgap_psrr_sim
 
 $(TARGET):
 	$(PATH)\hspice $(TARGET).sp $(CFLAG)
@@ -16,13 +16,13 @@ awaves:
 	$(PATH)\awaves $(TARGET)
 
 clean:
-	del $(TARGET).ic0 $(TARGET).ma0 $(TARGET).pa0 $(TARGET).mt0
+	del $(TARGET).ic* $(TARGET).ma* $(TARGET).pa* $(TARGET).mt* $(TARGET).ms*
 
 aclean:
 	make clean
-	del $(TARGET).lis $(TARGET).st0 $(TARGET).sw0 $(TARGET).ac0 $(TARGET).tr0 $(TARGET).m
+	del $(TARGET).lis $(TARGET).st* $(TARGET).sw* $(TARGET).ac* $(TARGET).tr* $(TARGET).m
 
 ACP:
 	git add .
 	git commit -a -m 'full'
-	git push orgin master
+	git push origin master
