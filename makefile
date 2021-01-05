@@ -1,6 +1,6 @@
 PATH := D:\HSPICE\hspice\BIN
 CFLAG := -o
-TARGET := bandgap_start_up_sim
+TARGET := novCLOCK
 
 $(TARGET):
 	$(PATH)\hspice $(TARGET).sp $(CFLAG)
