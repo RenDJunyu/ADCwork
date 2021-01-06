@@ -109,7 +109,7 @@ k为玻尔兹曼常数,q为电子电量\\
 对T求偏导:\frac{V_T}{I_s}\frac{\part{I_s}}{\part{T}}=(4+m)\frac{V_T}T+\frac{E_g}{kT^2}V_T\\
 从而有:\frac{\part{V_{BE}}}{\part{T}}=\frac{V_{BE}-(4+m)V_T-E_g/q}T
 $$
-​		$m\approx1.5,当衬底材料为硅时E_g=1.12eV。\\当V_{BE}=750mV,T=300K时,\frac{\part{V_{BE}}}{\part{T}}=-1/5mV/K$
+​		$m\approx1.5,当衬底材料为硅时E_g=1.12eV。\\当V_{BE}=750mV,T=300K时,\frac{\part{V_{BE}}}{\part{T}}=-1.5mV/K$
 
 ​		$V_{BE}$电压的温度系数$\frac{\part{V_{BE}}}{\part{T}}$本身与温度T相关，如果正温度系数是一个与温度无关的值，那么在进行温度补偿时就会出现误差，造成只能在一个温度点得到零温度系数的参考电压
 
@@ -132,16 +132,16 @@ $$
 
 ​		利用前面得到的正、负温度系数的电压，可以得到一个与温度无关的基准电压$V_{REF}$，有
 $$
-V_{REF}=\alpha_1·\frac{KT}q\ln{n}+\alpha_2·V_{BE}
+V_{REF}=\alpha_1·\frac{kT}q\ln{n}+\alpha_2·V_{BE}
 $$
-​		对α1和α2的选择：在室温(300K)下，有负温度系数电压$\frac{\part{}V_{BE}}{\part{T}}=-1.5mV/K$，而正温度系数电压为
+​		对α1和α2的选择：在300K下，有负温度系数电压$\frac{\part{}V_{BE}}{\part{T}}=-1.5mV/K$，而正温度系数电压为
 $$
-\frac{\part{}V_{BE}}{\part{T}}=\frac{k}q\ln{n}=0.087mV/K·\ln{n}\\
+\frac{\part{}\Delta{}V_{BE}}{\part{T}}=\frac{k}q\ln{n}=0.087mV/K·\ln{n}\\
 对温度T求偏导:\frac{\part{V_{REF}}}{\part{T}}=\alpha_1·\frac{k}q\ln{n}+\alpha_2\frac{\part{V_{BE}}}{\part{T}}\\
 令上式为零,带入正、负温度系数电压值,令\alpha_2=1:\\
 \alpha_1·\ln{n}=17.2
 $$
-​		从而零温度系数基准电压为$V_{REF}\approx17.2\frac{kT}q+V_{BE}\approx12.5V$
+​		从而零温度系数基准电压为$V_{REF}\approx17.2\frac{kT}q+V_{BE}\approx1.25V$
 
 **4、零温度系数基准电压电路结构**
 
@@ -275,6 +275,14 @@ $$
 ​		由于带隙基准电压源输出电压精度与电源抑制比和运算放大器得增益相关，所以为了提高放大器的直流增益，选择了两级结构。第一级采用简单的无关结构获得中等增益；第二级采用共源极，在提供一定增益的同时提供较大的输出摆幅。第一级与第二级之间的电容器$C_{C_0}$为米勒补偿电容器，用于将放大器产生的两个相邻极点分开，将主极点推向原点，而将第一非主极点退出单位增益带宽之外，达到频率补偿的目的。另外，加入调零电阻器，进一步抵消非主极点，使得两级放大器具有单极点的特性，具有较好的相位特性
 
 ​		为了进行噪声和失调电压优化，必须保证第一级放大器的输入管具有较大的宽长比和面积，输入管较大的跨导$g_m$可有效降低运算放大器的电路热噪声；较大的晶体管面积意味着运算放大器具有失调电压，同时也有利于降低电路的低频1/f噪声
+$$
+correct:\\
+V_{ref}=\frac{2R_4}{R_3}\frac{k_BT}{e}\ln{n}+(1+\frac{2R_4}{R_2})V_{BE,Q2}\\
+\frac{\part{V_{REF}}}{\part{T}}=\frac{2R_4}{R_3}·\frac{k_B}{e}\ln{n}+(1+\frac{2R_4}{R_2})\frac{\part{V_{BE}}}{\part{T}}\\
+\frac{\part{V_{BE}}}{\part{T}}=-1.5mV/K,\frac{k_BT}{e}\\
+\frac{R_4}{R_2}=\frac16,\frac{R_4}{R_3}=6
+$$
+
 
 ## 开关电路
 

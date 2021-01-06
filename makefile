@@ -1,6 +1,6 @@
 PATH := D:\HSPICE\hspice\BIN
 CFLAG := -o
-TARGET := novCLOCK
+TARGET := bandgap_vdd_sim
 
 $(TARGET):
 	$(PATH)\hspice $(TARGET).sp $(CFLAG)
@@ -21,5 +21,3 @@ clean:
 aclean:
 	make clean
 	del $(TARGET).lis $(TARGET).st* $(TARGET).sw* $(TARGET).ac* $(TARGET).tr* $(TARGET).m
-
-

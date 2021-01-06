@@ -7,13 +7,18 @@
 * 　　　　科学出版社　2020                      
 ************************************************          
 *
-* CMOS inverter 反相器
+*****************************************************************************************
+* Library Name: comparator
+* Cell Name: INV
+* View Name: schematic
+*****************************************************************************************
+* CMOS inverter
 .subckt INV vdda gnda  in out 
 MPM2 out in vdda vdda p18 W=4u L=180n m=1
 MNM1 out in gnda gnda n18 W=2u L=180n m=1
 .ends
 
-* CMOS inverter with larger delay 更大延迟的反相器
+* CMOS inverter with larger delay
 .subckt INV2 vdda gnda  in out 
 MPM2 out in vdda vdda p18 W=20u L=900n m=1
 MNM1 out in gnda gnda n18 W=10u L=900n m=1
@@ -40,6 +45,11 @@ m1 out s     in gnda n18 W=2u L=180n m=1
 m2 out s_inv in vdda p18 W=4u L=180n m=1
 .ends
 
+*****************************************************************************************
+* Library Name: comparator
+* Cell Name: NAND
+* View Name: schematic
+*****************************************************************************************
 * CMOS nand
 .SUBCKT NAND vdda gnda  A B out
 MPM2 out A vdda vdda p18 W=4u L=180n m=1
@@ -80,7 +90,9 @@ xb2  vdda gnda net04 clk1d        / BUFFER
 xb3  vdda gnda net09 clk2         / BUFFER  
 xb4  vdda gnda net11 clk2d        / BUFFER  
 .ends
-
+****************************
+* in use
+****************************
 * non-overlap clock generation
 .subckt CLOCKa vdda gnda  clkin clk1 clk1d clk2 clk2d
 xa1  vdda gnda net12 net05 net01  / NAND
@@ -92,8 +104,8 @@ xi1  vdda gnda net01 net02        / INV
 xi2  vdda gnda net02 net03        / INV1
 xi3  vdda gnda net08 net09        / INV
 xi4  vdda gnda net09 net10        / INV1
-xi5  vdda gnda clk2d net05        / INV1
-xi6  vdda gnda clk1d net06        / INV1
+xi5  vdda gnda net10 net05        / INV1
+xi6  vdda gnda net03 net06        / INV1
 xi7  vdda gnda clkin net07        / INV
 xi8  vdda gnda net07 net12        / INV
 
@@ -124,4 +136,42 @@ MM9 net02 net01 vdda vdda p18 W=60u L=180n m=1
 MM10 net02 clk  vdda vdda p18 W=60u L=180n m=1
 .ENDS
 
+*****************************************************************************************
+* Library Name: comparator
+* Cell Name: comparatormove
+* View Name: schematic
+*****************************************************************************************
 
+.SUBCKT comparatormove clk gnda out vdda vin vip	*建立动态比较器电路
+XI2 vdda gnda net048 net045 / INV
+XI3 vdda gnda net045 out / INV
+XI0 vdda gnda outp1 net048 net049  / NAND
+XI1 vdda gnda net049 outn1 net048  / NAND
+MM9 outp1 outn1 vdda vdda p18 W=60u L=180n m=1
+MM10 outp1 clk vdda vdda p18 W=60u L=180n m=1
+MM8 outn1 outp1 vdda vdda p18 W=60u L=180n m=1
+MM7 outn1 clk vdda vdda p18 W=60u L=180n m=1
+MM4 net40 vin gnda gnda n18 W=20u L=180n m=1
+MM3 net40 net42 gnda gnda n18 W=20u L=180n m=1
+MM6 outp1 clk net40 gnda n18 W=30u L=180n m=1
+MM5 outn1 clk net42 gnda n18 W=30u L=180n m=1
+MM2 net42 net40 gnda gnda n18 W=20u L=180n m=1
+MM1 net42 vip gnda gnda n18 W=20u L=180n m=1
+.ENDS
+
+*****************************************************************************************
+* Library Name: comparator
+* Cell Name: pre_amp
+* View Name: schematic
+*****************************************************************************************
+
+.SUBCKT pre_amp Idc_2u gnda vdda vin vip voutn voutp //建立预放大器电路
+MM4 voutn voutp vdda vdda p18 W=1u L=1u m=1
+MM5 voutp voutn vdda vdda p18 W=1u L=1u m=1
+MM6 voutp voutp vdda vdda p18 W=1.8u L=1u m=1
+MM3 voutn voutn vdda vdda p18 W=1.8u L=1u m=1
+MM1 voutn vip net27 gnda n18 W=4u L=2u m=1
+MM2 voutp vin net27 gnda n18 W=4u L=2u m=1
+MM0 net27 Idc_2u gnda gnda n18 W=8u L=2u m=1
+MMbias Idc_2u Idc_2u gnda gnda n18 W=4u L=2u m=1
+.ENDS
