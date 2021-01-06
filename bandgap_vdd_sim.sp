@@ -1,19 +1,21 @@
 .title bandgap vref vs. vdd spice test program(tt)
 .include 'models/Bandgap.cdl'
 .include 'models/misc.cdl'
+.include 'models/OTA.cdl'
 
 .param a=3.3
-x1 gnda vdda vref Bandgapa
-* 来个运放反向
+xA gnda vdd vss vref vIref Bandgapb
+vvdd vdd 0 3.3
+vvss vss 0 -3.3
 v1 vdda 0 a
 v2 gnda 0 0
-v3 vdda2 0 -1.8
+
 .option post accurate probe
 .op
 .temp 27
 .dc a 0 3.3 0.1
 *.probe dc v(Vref)
-.print dc v(out)
+.print dc v(vref) v(vIref)
 
 .lib 'models\ms018_v1p7.lib' tt
 .lib 'models\ms018_v1p7.lib' res_tt

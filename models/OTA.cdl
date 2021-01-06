@@ -1,0 +1,84 @@
+.SUBCKT OTA Idc gnda inn inp outn outp vcm vdda
+
+CC3 net25 outp 1p
+CC2 outn net25 1p
+CC0 net18 outn 2p
+CC1 net9 outp 2p
+
+RR4 net25 outp 100k
+RR2 net119 net9 1.2k
+RR3 outn net25 100k
+RR1 net107 net18 1.2k
+
+MM44 net139 net139 net0147 vdda p33 W=10u L=1u m=1
+MM38 net0169 net25 net0165 vdda p33 W=60u L=1u m=1
+MM37 net95 net0170 net0169 vdda p33 W=80u L=1u m=1
+
+MM42 iee vcm net0165 vdda p33 W=30u L=1u m=1
+MM43 net0165 net33 vdda vdda p33 W=150u L=1u m=1 
+MM41 ief vcm net0165 vdda p33 W=30u L=1u m=1
+
+MM25 outp net33 vdda vdda p33 W=300u L=1u m=1
+MM24 outn net33 vdda vdda p33 W=300u L=1u m=1
+MM20 iee inn net48 vdda p33 W=60u L=1u m=1
+
+MM19 net107 net0170 iee vdda p33 W=120u L=1u m=1
+MM16 net119 net0170 ief vdda p33 W=120u L=1u m=1
+MM15 ief inp net48 vdda p33 W=60u L=1u m=1
+
+MM10 net60 net33 vdda vdda p33 W=10u L=1u m=1
+MM9 net126 net139 net60 vdda p33 W=10u L=1u m=1
+
+MM14 net48 net33 vdda vdda p33 W=150u L=1u m=1
+
+MM8 net130 net139 net64 vdda p33 W=10u L=1u m=1
+MM7 net64 net33 vdda vdda p33 W=10u L=1u m=1
+MM6 net76 net33 vdda vdda p33 W=10u L=1u m=1
+MM5 net33 net33 net76 vdda p33 W=10u L=1u m=1
+MM4 net0170 net0170 net33 vdda p33 W=10u L=1u m=1
+
+MM3 net0147 net139 vdda vdda p33 W=2.5u L=2u m=1
+
+MM39 net0240 net95 gnda gnda n33 W=40u L=1u m=1
+MM40 net95 net126 net0240 gnda n33 W=40u L=1u m=1
+
+MM26 outp net119 gnda gnda n33 W=100u L=1u m=1
+MM23 outn net107 gnda gnda n33 W=100u L=1u m=1
+
+MM35 net107 net126 net111 gnda n33 W=60u L=1u m=1
+MM21 net111 net95 gnda gnda n33 W=60u L=1u m=1
+MM18 net115 net95 gnda gnda n33 W=60u L=1u m=1
+MM34 net119 net126 net115 gnda n33 W=60u L=1u m=1
+
+MM13 net126 net126 gnda gnda n33 W=1u L=3u m=1
+MM12 net130 net126 net131 gnda n33 W=5u L=1u m=1
+MM11 net131 net130 gnda gnda n33 W=5u L=1u m=1
+
+MM2 net0170 Idc gnda gnda n33 W=5u L=1u m=1
+MM1 net139 Idc gnda gnda n33 W=5u L=1u m=1
+MM0 Idc Idc gnda gnda n33 W=5u L=1u m=1
+.ENDS OTA
+
+.SUBCKT OPAMP 1 2 6 9 8
+* 1 vip
+* 2 vin
+* 6 vout
+* 8 VSS
+* 9 VDD
+M1 4 2 3 3 p08 W=4u L=1u AD=24p AS=24p PD=20u PS=20u
+M2 5 1 3 3 p08 W=4u L=1u AD=24p AS=24p PD=20u PS=20u
+M3 4 4 8 8 n08 W=11u L=1u AD=66p AS=66p PD=34u PS=34u
+M4 5 4 8 8 n08 W=11u L=1u AD=66p AS=66p PD=34u PS=34u
+M5 3 7 9 9 p08 W=59u L=1u AD=354p AS=354p PD=130u PS=130u
+M6 6 5 8 8 n08 W=45u L=1u AD=270p AS=270p PD=102u PS=102u
+M7 6 7 9 9 p08 W=118u L=1u AD=708p AS=708p PD=248u PS=248u
+M8 7 7 9 9 p08 W=59u L=1u AD=354p AS=354p PD=130u PS=130u
+Cc 5 6 3p
+Ib 7 8 45u
+.MODEL n08 NMOS VTO = 0.70 KP = 110U GAMMA = 0.4 LAMBDA = 0.04
++ PHI = 0.7 MJ = 0.5 MJSW = 0.38 CGBO = 700P CGSO = 220P CGDO = 220P
++ CJ = 770U CJSW = 380P LD = 0.016U TOX = 14N
+.MODEL p08 PMOS VTO = -0.70 KP = 50U GAMMA = 0.57 LAMBDA = 0.05
++ PHI = 0.8 MJ = 0.5 MJSW = 0.35 CGBO = 700P CGSO = 220P CGDO = 220P
++ CJ = 560U CJSW = 350P LD = 0.014U TOX = 14N
+.ENDS

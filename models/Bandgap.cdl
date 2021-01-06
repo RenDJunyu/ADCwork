@@ -1,4 +1,5 @@
 .Title Bandgap
+
 .SUBCKT OTA_bandgap Idc_10u gnda out vdda vin vip
 MNM3 out net17 gnda gnda n33 W=3u L=700n m=2
 MNM1 net13 net13 gnda gnda n33 W=5u L=1u m=1
@@ -15,6 +16,7 @@ RR0 net9 net17 rpposab w=1u l=40u
 *******************
 * Vref=1.25V
 *******************
+
 .SUBCKT Bandgap gnda vdda vref
 RR3 net_081 net073 9.67K 
 RR4 vref net070 48K
@@ -43,6 +45,7 @@ XI0 net6 gnda ot vdda net1 net_081 / OTA_bandgap
 *******************
 * Vref=1.6V
 *******************
+
 .SUBCKT Bandgapa gnda vdda vref
 RR1 net_081 gnda 50K 
 RR2 net1 gnda 50K 
@@ -68,4 +71,19 @@ MPM5 vref ot vdda vdda p33 W=5u L=2u m=3
 MPM4 net_081 ot vdda vdda p33 W=5u L=2u m=3
 MPM3 net1 ot vdda vdda p33 W=5u L=2u m=3
 XI0 net6 gnda ot vdda net1 net_081 / OTA_bandgap
+.ENDS
+
+*******************
+* Vref=-1.6V
+*******************
+.SUBCKT Bandgapb gnda vdd vss vref vIref
+xA gnda vdd vref / Bandgapa
+*电压跟随器
+xS vref vroin vro vdd vss / OPAMP
+R0 vroin vro 10k
+* 反向运放
+xI vip vin vIref vdd vss / OPAMP
+R1 vro vin 10k
+R2 vin vIref 16.6k
+R3 vip gnda 10k
 .ENDS

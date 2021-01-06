@@ -1,0 +1,289 @@
+***** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******
+ Input File: bandgap_vdd_sim.sp
+ lic:
+ lic: FLEXlm: v10.8
+ lic: USER:   86184                HOSTNAME: PC2line
+ lic: HOSTID: "e86a64c8f38a 00ff6e5bbc8f 485f9955e58d 4a5f9955e58d ca5f9955e58d"
+ lic: Using FLEXlm license file:
+ lic: D:\HSPICE\license1.dat
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 31-dec-2030/2030.12
+ lic: NODE LOCKED license on hostid "e86a64c8f38a 00ff6e5bbc8f 485f9955e58d 4a5f
+ lic:
+ init: begin read circuit files,  cpu clock=  8.38E-01
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option search   = D:\HSPICE\hspice\PARTS\XILINX\
+       option search   = D:\HSPICE\hspice\PARTS\TLINE\
+       option search   = D:\HSPICE\hspice\PARTS\TI\
+       option search   = D:\HSPICE\hspice\PARTS\SIGNET\
+       option search   = D:\HSPICE\hspice\PARTS\PCI\
+       option search   = D:\HSPICE\hspice\PARTS\LIN_TECH\
+       option search   = D:\HSPICE\hspice\PARTS\FET\
+       option search   = D:\HSPICE\hspice\PARTS\DIO\
+       option search   = D:\HSPICE\hspice\PARTS\COMLINE\
+       option search   = D:\HSPICE\hspice\PARTS\BURR_BRN\
+       option search   = D:\HSPICE\hspice\PARTS\BJT\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option post     =     2.00
+       option runlvl
+       option post
+       option accura
+       option probe
+ init: end read circuit files,  cpu clock=  8.98E-01 memory=    425 kb
+ init: begin check errors,  cpu clock=  8.98E-01
+ init: end check errors,  cpu clock=  9.09E-01 memory=    689 kb
+ init: begin setup matrix, pivot=     0 cpu clock=  9.09E-01
+       establish matrix -- done,  cpu clock=  9.17E-01 memory=    723 kb
+       re-order matrix -- done,  cpu clock=  9.24E-01 memory=    732 kb
+ init: end setup matrix,  cpu clock=  9.28E-01 memory=    780 kb
+ output: bandgap_vdd_sim.sw0
+ sweep: dc dc0    begin, #sweeps=  34 cpu clock=  9.36E-01
+       establish matrix -- done,  cpu clock=  9.40E-01 memory=    735 kb
+       re-order matrix -- done,  cpu clock=  9.43E-01 memory=    744 kb
+ dcop: begin pseudo transient
+ dcop: ...failed in final try
+ dcop: end pseudo transient
+       establish matrix -- done,  cpu clock=  1.04E+00 memory=    735 kb
+       re-order matrix -- done,  cpu clock=  1.04E+00 memory=    744 kb
+ sweep: dc dc0    end,  cpu clock=  1.21E+00 memory=    785 kb
+ dcop: begin dcop,  cpu clock=  1.21E+00
+ dcop: begin pseudo transient
+ dcop: ...failed in final try
+ dcop: end pseudo transient
+ dcop: begin gshunt ramping
+ dcop: gshunt =      0.1000000E-03, gmin =      0.1000000E-11, iter =       11
+ dcop: gshunt =      0.1000000E-04, gmin =      0.1000000E-11, iter =      200
+ dcop: gshunt =      0.1000000E-04, gmin =      0.9500000E-11, iter =      200
+ dcop: gshunt =      0.5050000E-04, gmin =      0.9500000E-11, iter =       10
+ dcop: gshunt =      0.2550250E-04, gmin =      0.9500000E-11, iter =        9
+ dcop: gshunt =      0.2550250E-04, gmin =      0.4750000E-11, iter =        3
+ dcop: gshunt =      0.1287876E-04, gmin =      0.4750000E-11, iter =        6
+ dcop: gshunt =      0.1287876E-04, gmin =      0.2375000E-11, iter =        3
+ dcop: gshunt =      0.6503775E-05, gmin =      0.2375000E-11, iter =      200
+ dcop: gshunt =      0.6503775E-05, gmin =      0.2256250E-10, iter =      200
+ dcop: gshunt =      0.9372519E-05, gmin =      0.2256250E-10, iter =      200
+ dcop: gshunt =      0.9372519E-05, gmin =      0.2143437E-09, iter =      200
+ dcop: gshunt =      0.1095033E-04, gmin =      0.2143437E-09, iter =        5
+ dcop: gshunt =      0.9310653E-05, gmin =      0.2143437E-09, iter =      200
+ dcop: gshunt =      0.9310653E-05, gmin =      0.2036266E-08, iter =      200
+ dcop: gshunt =      0.1004851E-04, gmin =      0.2036266E-08, iter =      200
+ dcop: gshunt =      0.1004851E-04, gmin =      0.1934452E-07, iter =       19
+ dcop: gshunt =      0.9220956E-05, gmin =      0.1934452E-07, iter =        5
+ dcop: gshunt =      0.9220956E-05, gmin =      0.9672262E-08, iter =        4
+ dcop: gshunt =      0.8461558E-05, gmin =      0.9672262E-08, iter =        5
+ dcop: gshunt =      0.8461558E-05, gmin =      0.4836131E-08, iter =        4
+ dcop: gshunt =      0.7764701E-05, gmin =      0.4836131E-08, iter =        5
+ dcop: gshunt =      0.7764701E-05, gmin =      0.2418065E-08, iter =        4
+ dcop: gshunt =      0.6805501E-05, gmin =      0.2418065E-08, iter =        5
+ dcop: gshunt =      0.6805501E-05, gmin =      0.1209033E-08, iter =        4
+ dcop: gshunt =      0.5544440E-05, gmin =      0.1209033E-08, iter =        5
+ dcop: gshunt =      0.5544440E-05, gmin =      0.6045164E-09, iter =        4
+ dcop: gshunt =      0.4003362E-05, gmin =      0.6045164E-09, iter =        5
+ dcop: gshunt =      0.4003362E-05, gmin =      0.3022582E-09, iter =        4
+ dcop: gshunt =      0.2334259E-05, gmin =      0.3022582E-09, iter =        5
+ dcop: gshunt =      0.2334259E-05, gmin =      0.1511291E-09, iter =        4
+ dcop: gshunt =      0.8744411E-06, gmin =      0.1511291E-09, iter =        6
+ dcop: gshunt =      0.8744411E-06, gmin =      0.7556454E-10, iter =        4
+ dcop: gshunt =      0.8744411E-07, gmin =      0.7556454E-10, iter =        7
+ dcop: gshunt =      0.8744411E-07, gmin =      0.3778227E-10, iter =        4
+ dcop: gshunt =      0.8744411E-08, gmin =      0.3778227E-10, iter =        7
+ dcop: gshunt =      0.8744411E-08, gmin =      0.1889114E-10, iter =        4
+ dcop: gshunt =      0.8744411E-09, gmin =      0.1889114E-10, iter =        7
+ dcop: gshunt =      0.8744411E-09, gmin =      0.9445568E-11, iter =        4
+ dcop: gshunt =      0.8744411E-10, gmin =      0.9445568E-11, iter =        7
+ dcop: gshunt =      0.8744411E-10, gmin =      0.4722784E-11, iter =        4
+ dcop: gshunt =      0.8744411E-11, gmin =      0.4722784E-11, iter =        7
+ dcop: gshunt =      0.8744411E-11, gmin =      0.2361392E-11, iter =        4
+ dcop: gshunt =      0.8744411E-12, gmin =      0.2361392E-11, iter =        7
+ dcop: gshunt =      0.8744411E-12, gmin =      0.1180696E-11, iter =        4
+ dcop: gshunt =      0.8744411E-13, gmin =      0.1180696E-11, iter =        7
+ dcop: gshunt =      0.8744411E-13, gmin =      0.1000000E-11, iter =        4
+ dcop: gshunt =      0.8744411E-14, gmin =      0.1000000E-11, iter =        7
+ dcop: gshunt =      0.0000000E+00, gmin =      0.1000000E-11, iter =        4
+ dcop: gshunt ramping succeeded
+ dcop: end dcop,  cpu clock=  1.56E+00 memory=    784 kb  tot_iter=    8312
+>info:         ***** hspice job concluded
+ init: begin read circuit files,  cpu clock=  1.60E+00
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option search   = D:\HSPICE\hspice\PARTS\XILINX\
+       option search   = D:\HSPICE\hspice\PARTS\TLINE\
+       option search   = D:\HSPICE\hspice\PARTS\TI\
+       option search   = D:\HSPICE\hspice\PARTS\SIGNET\
+       option search   = D:\HSPICE\hspice\PARTS\PCI\
+       option search   = D:\HSPICE\hspice\PARTS\LIN_TECH\
+       option search   = D:\HSPICE\hspice\PARTS\FET\
+       option search   = D:\HSPICE\hspice\PARTS\DIO\
+       option search   = D:\HSPICE\hspice\PARTS\COMLINE\
+       option search   = D:\HSPICE\hspice\PARTS\BURR_BRN\
+       option search   = D:\HSPICE\hspice\PARTS\BJT\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option post     =     2.00
+       option runlvl
+       option post
+       option accura
+       option probe
+ init: end read circuit files,  cpu clock=  1.69E+00 memory=    425 kb
+ init: begin check errors,  cpu clock=  1.69E+00
+ init: end check errors,  cpu clock=  1.70E+00 memory=    689 kb
+ init: begin setup matrix, pivot=     0 cpu clock=  1.70E+00
+       establish matrix -- done,  cpu clock=  1.71E+00 memory=    723 kb
+       re-order matrix -- done,  cpu clock=  1.71E+00 memory=    732 kb
+ init: end setup matrix,  cpu clock=  1.71E+00 memory=    780 kb
+ output: bandgap_vdd_sim.sw1
+ sweep: dc dc0    begin, #sweeps=  34 cpu clock=  1.72E+00
+       establish matrix -- done,  cpu clock=  1.72E+00 memory=    735 kb
+       re-order matrix -- done,  cpu clock=  1.73E+00 memory=    744 kb
+ dcop: begin pseudo transient
+ dcop: ...failed in final try
+ dcop: end pseudo transient
+       establish matrix -- done,  cpu clock=  1.82E+00 memory=    735 kb
+       re-order matrix -- done,  cpu clock=  1.83E+00 memory=    744 kb
+ sweep: dc dc0    end,  cpu clock=  1.98E+00 memory=    785 kb
+ dcop: begin dcop,  cpu clock=  1.98E+00
+ dcop: begin pseudo transient
+ dcop: ...failed in final try
+ dcop: end pseudo transient
+ dcop: begin gshunt ramping
+ dcop: gshunt =      0.1000000E-03, gmin =      0.1000000E-11, iter =       11
+ dcop: gshunt =      0.1000000E-04, gmin =      0.1000000E-11, iter =       15
+ dcop: gshunt =      0.1000000E-05, gmin =      0.1000000E-11, iter =      200
+ dcop: gshunt =      0.1000000E-05, gmin =      0.9500000E-11, iter =      200
+ dcop: gshunt =      0.5050000E-05, gmin =      0.9500000E-11, iter =      200
+ dcop: gshunt =      0.5050000E-05, gmin =      0.9025000E-10, iter =      200
+ dcop: gshunt =      0.7277500E-05, gmin =      0.9025000E-10, iter =        5
+ dcop: gshunt =      0.5296200E-05, gmin =      0.9025000E-10, iter =      200
+ dcop: gshunt =      0.5296200E-05, gmin =      0.8573750E-09, iter =      200
+ dcop: gshunt =      0.6187785E-05, gmin =      0.8573750E-09, iter =        7
+ dcop: gshunt =      0.5261242E-05, gmin =      0.8573750E-09, iter =      200
+ dcop: gshunt =      0.5261242E-05, gmin =      0.8145062E-08, iter =      200
+ dcop: gshunt =      0.5678186E-05, gmin =      0.8145062E-08, iter =      200
+ dcop: gshunt =      0.5678186E-05, gmin =      0.7737809E-07, iter =      200
+ dcop: gshunt =      0.5907506E-05, gmin =      0.7737809E-07, iter =      200
+ dcop: gshunt =      0.5907506E-05, gmin =      0.7350919E-06, iter =      200
+ dcop: gshunt =      0.6033631E-05, gmin =      0.7350919E-06, iter =      200
+ dcop: gshunt =      0.6033631E-05, gmin =      0.1000000E-05, iter =      200
+ dcop: gshunt =      0.6103001E-05, gmin =      0.1000000E-05, iter =      200
+ dcop: gshunt =      0.6141154E-05, gmin =      0.1000000E-05, iter =      200
+ dcop: gshunt =      0.6162138E-05, gmin =      0.1000000E-05, iter =      200
+ dcop: gshunt =      0.6173679E-05, gmin =      0.1000000E-05, iter =      200
+ dcop: gshunt =      0.6180027E-05, gmin =      0.1000000E-05, iter =      200
+ dcop: gshunt =      0.6183518E-05, gmin =      0.1000000E-05, iter =      200
+ dcop: gshunt =      0.6185438E-05, gmin =      0.1000000E-05, iter =      200
+ dcop: gshunt =      0.6186494E-05, gmin =      0.1000000E-05, iter =      200
+ dcop: gshunt =      0.6187075E-05, gmin =      0.1000000E-05, iter =      200
+ dcop: gshunt =      0.6187395E-05, gmin =      0.1000000E-05, iter =      200
+ dcop: gshunt =      0.1000000E-03
+ dcop: gshunt =      0.1000000E-04
+ dcop: gshunt =      0.1000000E-05
+ dcop: gshunt =      0.5050000E-05
+ dcop: gshunt =      0.7277500E-05
+ dcop: gshunt =      0.4305551E-05
+ dcop: gshunt =      0.5642928E-05
+ dcop: gshunt =      0.4375491E-05
+ dcop: gshunt =      0.4945838E-05
+ dcop: gshunt =      0.5259528E-05
+ dcop: gshunt =      0.5432058E-05
+ dcop: gshunt =      0.5229068E-05
+ dcop: gshunt =      0.5320414E-05
+ dcop: gshunt =      0.5211064E-05
+ dcop: gshunt =      0.5103962E-05
+ dcop: gshunt =      0.5152158E-05
+ dcop: gshunt =      0.5178666E-05
+ dcop: gshunt =      0.5146468E-05
+ dcop: gshunt =      0.5160957E-05
+ dcop: gshunt =      0.5168926E-05
+ dcop: gshunt =      0.5173309E-05
+ dcop: gshunt =      0.5175719E-05
+ dcop: gshunt =      0.5177045E-05
+ dcop: gshunt =      0.5177774E-05
+ dcop: gshunt =      0.5178175E-05
+ dcop: gshunt =      0.5178396E-05
+ dcop: gshunt =      0.5178517E-05
+ dcop: gshunt =      0.5178369E-05
+ dcop: gshunt =      0.5178221E-05
+ dcop: gshunt =      0.5178072E-05
+ dcop: gshunt =      0.5177924E-05
+ dcop: gshunt =      0.5177702E-05
+ dcop: gshunt =      0.5177368E-05
+ dcop: gshunt =      0.5176868E-05
+ dcop: gshunt =      0.5176117E-05
+ dcop: gshunt =      0.5174992E-05
+ dcop: gshunt =      0.5173304E-05
+ dcop: gshunt =      0.5170773E-05
+ dcop: gshunt =      0.5166979E-05
+ dcop: gshunt =      0.5161291E-05
+ dcop: gshunt =      0.5152770E-05
+ dcop: gshunt =      0.5140008E-05
+ dcop: gshunt =      0.5120913E-05
+ dcop: gshunt =      0.5092377E-05
+ dcop: gshunt =      0.5049811E-05
+ dcop: gshunt =      0.4986496E-05
+ dcop: gshunt =      0.4892714E-05
+ dcop: gshunt =      0.4754688E-05
+ dcop: gshunt =      0.4553488E-05
+ dcop: gshunt =      0.4264460E-05
+ dcop: gshunt =      0.3858436E-05
+ dcop: gshunt =      0.3307388E-05
+ dcop: gshunt =      0.2598863E-05
+ dcop: gshunt =      0.1763751E-05
+ dcop: gshunt =      0.9136127E-06
+ dcop: gshunt =      0.2530626E-06
+ dcop: gshunt =      0.2530626E-07
+ dcop: gshunt =      0.2530626E-08
+ dcop: gshunt =      0.2530626E-09
+ dcop: gshunt =      0.2530626E-10
+ dcop: gshunt =      0.2530626E-11
+ dcop: gshunt =      0.2530626E-12
+ dcop: gshunt =      0.2530626E-13
+ dcop: gshunt =      0.2530626E-14
+ dcop: gshunt =      0.2530626E-15
+ dcop: gshunt =      0.0000000E+00
+ dcop: gshunt ramping succeeded
+ dcop: end dcop,  cpu clock=  3.23E+00 memory=    784 kb  tot_iter=   30988
+>info:         ***** hspice job concluded
+ init: begin read circuit files,  cpu clock=  3.27E+00
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option search   = D:\HSPICE\hspice\PARTS\XILINX\
+       option search   = D:\HSPICE\hspice\PARTS\TLINE\
+       option search   = D:\HSPICE\hspice\PARTS\TI\
+       option search   = D:\HSPICE\hspice\PARTS\SIGNET\
+       option search   = D:\HSPICE\hspice\PARTS\PCI\
+       option search   = D:\HSPICE\hspice\PARTS\LIN_TECH\
+       option search   = D:\HSPICE\hspice\PARTS\FET\
+       option search   = D:\HSPICE\hspice\PARTS\DIO\
+       option search   = D:\HSPICE\hspice\PARTS\COMLINE\
+       option search   = D:\HSPICE\hspice\PARTS\BURR_BRN\
+       option search   = D:\HSPICE\hspice\PARTS\BJT\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option post     =     2.00
+       option runlvl
+       option post
+       option accura
+       option probe
+ init: end read circuit files,  cpu clock=  3.35E+00 memory=    425 kb
+ init: begin check errors,  cpu clock=  3.35E+00
+ init: end check errors,  cpu clock=  3.36E+00 memory=    689 kb
+ init: begin setup matrix, pivot=     0 cpu clock=  3.36E+00
+       establish matrix -- done,  cpu clock=  3.37E+00 memory=    723 kb
+       re-order matrix -- done,  cpu clock=  3.37E+00 memory=    732 kb
+ init: end setup matrix,  cpu clock=  3.37E+00 memory=    780 kb
+ output: bandgap_vdd_sim.sw2
+ sweep: dc dc0    begin, #sweeps=  34 cpu clock=  3.38E+00
+       establish matrix -- done,  cpu clock=  3.38E+00 memory=    735 kb
+       re-order matrix -- done,  cpu clock=  3.39E+00 memory=    744 kb
+ sweep: dc dc0    end,  cpu clock=  3.41E+00 memory=    784 kb
+ dcop: begin dcop,  cpu clock=  3.42E+00
+       establish matrix -- done,  cpu clock=  3.42E+00 memory=    735 kb
+       re-order matrix -- done,  cpu clock=  3.42E+00 memory=    744 kb
+ dcop: end dcop,  cpu clock=  3.44E+00 memory=    783 kb  tot_iter=     258
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)
