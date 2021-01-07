@@ -1,6 +1,6 @@
 PATH := D:\HSPICE\hspice\BIN
 CFLAG := -o
-TARGET := bandgap_vdd_sim
+TARGET := sub_ADC
 
 $(TARGET):
 	$(PATH)\hspice $(TARGET).sp $(CFLAG)

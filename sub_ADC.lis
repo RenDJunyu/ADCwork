@@ -1,0 +1,132 @@
+ ****** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******                   
+  Copyright (C) 2011 Synopsys, Inc. All Rights Reserved.                        
+  Unpublished-rights reserved under US copyright laws.
+  This program is protected by law and is subject to the
+  terms and conditions of the license agreement from Synopsys.
+  Use of this program is your acceptance to be bound by the
+  license agreement. HSPICE is the trademark of Synopsys, Inc.
+  Input File: sub_ADC.sp                                                        
+  Command line options: sub_ADC.sp -o
+  lic:  
+  lic: FLEXlm: v10.8 
+  lic: USER:   86184                HOSTNAME: PC2line 
+  lic: HOSTID: "e86a64c8f38a 00ff6e5bbc8f 485f9955e58d 4a5f9955e58d ca5f9955e58d
+ "
+  lic: Using FLEXlm license file: 
+  lic: D:\HSPICE\license1.dat 
+  lic: Checkout 1 hspice 
+  lic: License/Maintenance for hspice will expire on 31-dec-2030/2030.12 
+  lic: NODE LOCKED license on hostid "e86a64c8f38a 00ff6e5bbc8f 485f9955e58d 4a5
+ f
+  lic:   
+ Init: read install configuration file: D:\HSPICE\hspice\meta.cfg
+  **warning** (models\ms018_v1p7.mdl:56) Model n18 device geometries will not be checked against the limits set by lmin, lmax, wmin and wmax. To enable this check, add a period(.) to the model name(i.e. enable model selector).
+
+ **warning**  runlvl smaller than 5, reset to 5  when accurate turned on
+
+ **warning**  runlvl smaller than 5, reset to 5  when accurate turned on
+1****** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******                   
+ ******  
+ bandgap
+
+  ******  circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xr1.                            bandgapb           1.00 
+        2 xc1.                            comparator_preamp
+                                                                 1.00 
+        3 xc2.                            comparator_preamp
+                                                                 1.00 
+        4 xc3.                            comparator_preamp
+                                                                 1.00 
+        5 xc4.                            comparator_preamp
+                                                                 1.00 
+        6 xc5.                            comparator_preamp
+                                                                 1.00 
+        7 xc6.                            comparator_preamp
+                                                                 1.00 
+        8 xr1.xa.                         bandgapa           1.00 
+        9 xr1.xs.                         opamp              1.00 
+       10 xr1.xi.                         opamp              1.00 
+       11 xc1.xi43.                       comparatormove     1.00 
+       12 xc1.xi42.                       pre_amp            1.00 
+       13 xc2.xi43.                       comparatormove     1.00 
+       14 xc2.xi42.                       pre_amp            1.00 
+       15 xc3.xi43.                       comparatormove     1.00 
+       16 xc3.xi42.                       pre_amp            1.00 
+       17 xc4.xi43.                       comparatormove     1.00 
+       18 xc4.xi42.                       pre_amp            1.00 
+       19 xc5.xi43.                       comparatormove     1.00 
+       20 xc5.xi42.                       pre_amp            1.00 
+       21 xc6.xi43.                       comparatormove     1.00 
+       22 xc6.xi42.                       pre_amp            1.00 
+       23 xr1.xa.xi0.                     ota_bandgap        1.00 
+       24 xc1.xi43.xi2.                   inv                1.00 
+       25 xc1.xi43.xi3.                   inv                1.00 
+       26 xc1.xi43.xi0.                   nand               1.00 
+       27 xc1.xi43.xi1.                   nand               1.00 
+       28 xc2.xi43.xi2.                   inv                1.00 
+       29 xc2.xi43.xi3.                   inv                1.00 
+       30 xc2.xi43.xi0.                   nand               1.00 
+       31 xc2.xi43.xi1.                   nand               1.00 
+       32 xc3.xi43.xi2.                   inv                1.00 
+       33 xc3.xi43.xi3.                   inv                1.00 
+       34 xc3.xi43.xi0.                   nand               1.00 
+       35 xc3.xi43.xi1.                   nand               1.00 
+       36 xc4.xi43.xi2.                   inv                1.00 
+       37 xc4.xi43.xi3.                   inv                1.00 
+       38 xc4.xi43.xi0.                   nand               1.00 
+       39 xc4.xi43.xi1.                   nand               1.00 
+       40 xc5.xi43.xi2.                   inv                1.00 
+       41 xc5.xi43.xi3.                   inv                1.00 
+       42 xc5.xi43.xi0.                   nand               1.00 
+       43 xc5.xi43.xi1.                   nand               1.00 
+       44 xc6.xi43.xi2.                   inv                1.00 
+       45 xc6.xi43.xi3.                   inv                1.00 
+       46 xc6.xi43.xi0.                   nand               1.00 
+       47 xc6.xi43.xi1.                   nand               1.00 
+  **info** (sub_ADC.sp:46) DC voltage reset to initial transient source value              in source        0:vclk                new dc=  0.0000D+00
+ 
+
+  
+  **warning** (models\Bandgap.cdl:67) Only 1 connection at node 0116 called in element xr1.xa.mm0.
+      
+ **info** set option symb=1 internally to help for convergence.
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 5         bypass  = 2         
+  Opening plot unit= 79
+ file=sub_ADC.pa0                                                              
+
+
+ **info** rebuilding matrix with pivot option
+
+
+ **info** rebuilding matrix without pivot option
+
+ **info** dc convergence successful
+ you can increase the efficiency of the
+ operating point calculation by setting dcon= 1
+ in the .option statement
+1****** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******                   
+ ******  
+ bandgap
+
+  ******  operating point information tnom=  25.000 temp=  27.000 *****
+ ***** operating point status is all       simulation time is     0.     
+     node    =voltage       node    =voltage       node    =voltage
+
+ + 0:pot1    =  -1.0003   0:pot2    =-602.0646m  0:pot3    =-203.8322m
+ + 0:pot4    = 194.4001m  0:pot5    = 592.6325m  0:pot6    = 990.8649m
+ +
+
+
+ maximum nodal capacitance=   1.000E-05         on node     0:pot1            
+
+    nodal  capacitance table 
+
+     node    =    cap       node    =    cap       node    =    cap
+
+ + 0:pot1    =  60.0001u  0:pot2    =  60.0001u  0:pot3    =  60.0001u
