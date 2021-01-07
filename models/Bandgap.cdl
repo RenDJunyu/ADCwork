@@ -87,14 +87,3 @@ R1 vro vin 10k
 R2 vin vIref 16.6k
 R3 vip gnda 10k
 .ENDS
-
-*****************************************************************************************
-* Library Name: comparator
-* Cell Name: comparator_preamp
-* View Name: schematic
-*****************************************************************************************
-
-.SUBCKT comparator_preamp Iin clk gnda out vdda vin vip
-XI43 clk gnda out vdda net34 net33 / comparatormove
-XI42 Iin gnda vdda vin vip net34 net33 / pre_amp
-.ENDS

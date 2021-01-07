@@ -1,0 +1,98 @@
+* "simulator" "HSPICE" 
+* "version" "F-2011.09 32-BIT"
+* "format" "HSP"
+* "rundate" "18:30:05 01/07/2021 "
+* "netlist" "test.sp "
+* "runtitle" "bandgap"
+* time =    0.            
+* temperature =   27.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ clk1 =  -1.8000        
++ clk1d =  -1.8000        
++ clk2 =   1.8000        
++ clk2d =   1.8000        
++ clkin =  -1.8000        
++ out =   1.8000        
++ vdd =   1.8000        
++ vin =   1.0000        
++ vss =  -1.8000        
++ xclk.net01 =   1.8000        
++ xclk.net02 =  -1.8000        
++ xclk.net03 =   1.8000        
++ xclk.net04 =  -1.8000        
++ xclk.net07 =   1.8000        
++ xclk.net08 =  -1.8000        
++ xclk.net09 =   1.8000        
++ xclk.net10 =  -1.8000        
++ xclk.net11 =   1.8000        
++ xclk.net12 =  -1.8000        
++ xsh.comp = 389.2997m       
++ xsh.vy =  -1.7824        
++ xclk.xa1.net01 =  -1.7229        
++ xclk.xa2.net01 =  -1.8000        
++ xclk.xa3.net01 =  -1.8000        
++ xclk.xa4.net01 =  -1.7229        
++ xclk.xi2.net01 =   1.8000        
++ xclk.xi2.net02 =  -1.8000        
++ xclk.xi2.net03 =   1.8000        
++ xclk.xi2.net04 =  -1.8000        
++ xclk.xi2.net05 =   1.8000        
++ xclk.xi2.net06 =  -1.8000        
++ xclk.xi4.net01 =  -1.8000        
++ xclk.xi4.net02 =   1.8000        
++ xclk.xi4.net03 =  -1.8000        
++ xclk.xi4.net04 =   1.8000        
++ xclk.xi4.net05 =  -1.8000        
++ xclk.xi4.net06 =   1.8000        
++ xclk.xb1.in_inv =   1.8000        
++ xclk.xb2.in_inv =   1.8000        
++ xclk.xb3.in_inv =  -1.8000        
++ xclk.xb4.in_inv =  -1.8000        
++ xsh.xs1.iclk =   1.8000        
++ xsh.xs1.inetd4 =   1.8000        
++ xsh.xs1.netd4 =  -1.7985        
++ xsh.xs1.netd6 =  -1.8000        
++ xsh.xs1.netd7 =  -1.8000        
++ xsh.xs1.nets1 =   1.3364        
++ xsh.xs1.nets2 =   1.8000        
++ xsh.xs1.nets3 = 899.3399m       
++ xsh.xs1.nets5 =  -1.8000        
++ xsh.xs1.nets7 =  -1.8000        
++ xsh.xs2.iclk =  -1.8000        
++ xsh.xs2.inetd4 =  -1.8000        
++ xsh.xs2.netd4 =   1.8000        
++ xsh.xs2.netd6 =  -1.8000        
++ xsh.xs2.netd7 = 822.0428m       
++ xsh.xs2.nets1 =   1.3364        
++ xsh.xs2.nets2 =   1.8000        
++ xsh.xs2.nets3 = 822.0432m       
++ xsh.xs2.nets5 =   1.2225        
++ xsh.xs2.nets7 = 822.0421m       
++ xsh.xs3.iclk =   1.8000        
++ xsh.xs3.inetd4 =   1.8000        
++ xsh.xs3.netd4 =  -1.7985        
++ xsh.xs3.netd6 =  -1.8000        
++ xsh.xs3.netd7 =  -1.8000        
++ xsh.xs3.nets1 =   1.3364        
++ xsh.xs3.nets2 =   1.8000        
++ xsh.xs3.nets3 = 899.3397m       
++ xsh.xs3.nets5 =  -1.8000        
++ xsh.xs3.nets7 =  -1.8000        
++ xsh.xs4.iclk =   1.8000        
++ xsh.xs4.inetd4 =   1.8000        
++ xsh.xs4.netd4 =  -1.7985        
++ xsh.xs4.netd6 =  -1.8000        
++ xsh.xs4.netd7 =  -1.8000        
++ xsh.xs4.nets1 =   1.3364        
++ xsh.xs4.nets2 =   1.8000        
++ xsh.xs4.nets3 = 899.3399m       
++ xsh.xs4.nets5 =  -1.8000        
++ xsh.xs4.nets7 =  -1.8000        
++ xsh.xnp.3 =-361.5828m       
++ xsh.xnp.4 =-829.8936m       
++ xsh.xnp.5 =  -1.8000        
++ xsh.xnp.7 = 933.4246m       
+***   END: Saved Operating Point ***                     

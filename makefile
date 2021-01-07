@@ -1,6 +1,6 @@
 PATH := D:\HSPICE\hspice\BIN
 CFLAG := -o
-TARGET := sub_ADC
+TARGET := test
 
 $(TARGET):
 	$(PATH)\hspice $(TARGET).sp $(CFLAG)

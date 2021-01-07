@@ -1,0 +1,68 @@
+*****************************************************************************************
+* Library Name: comparator
+* Cell Name: comparatormove
+* View Name: schematic
+*****************************************************************************************
+
+.SUBCKT comparatormove clk gnda out vdda vin vip	*建立动态比较器电路
+XI2 vdda gnda net048 net045 / INV
+XI3 vdda gnda net045 out / INV
+XI0 vdda gnda outp1 net048 net049  / NAND
+XI1 vdda gnda net049 outn1 net048  / NAND
+MM9 outp1 outn1 vdda vdda p18 W=60u L=180n m=1
+MM10 outp1 clk vdda vdda p18 W=60u L=180n m=1
+MM8 outn1 outp1 vdda vdda p18 W=60u L=180n m=1
+MM7 outn1 clk vdda vdda p18 W=60u L=180n m=1
+MM4 net40 vin gnda gnda n18 W=20u L=180n m=1
+MM3 net40 net42 gnda gnda n18 W=20u L=180n m=1
+MM6 outp1 clk net40 gnda n18 W=30u L=180n m=1
+MM5 outn1 clk net42 gnda n18 W=30u L=180n m=1
+MM2 net42 net40 gnda gnda n18 W=20u L=180n m=1
+MM1 net42 vip gnda gnda n18 W=20u L=180n m=1
+.ENDS
+
+.SUBCKT comparatorother clk gnd outp vdd vin vip
+XI0 n3 outp gnd vdd / inv
+XI1 n4 outn gnd vdd / inv
+MN1 n1 vip n5 gnd n18 W=20u L=0.2u m=1
+MN2 n2 vin n5 gnd n18 W=20u L=0.2u m=1
+MN3 n3 n4 n1 gnd n18 W=20u L=0.2u m=1
+MN4 n4 n3 n2 gnd n18 W=20u L=0.2u m=1
+MP1 n1 clk vdd vdd p18 W=20u L=0.2u m=1
+MP2 n3 clk vdd vdd p18 W=20u L=0.2u m=1
+MP3 n3 n4 vdd vdd p18 W=20u L=0.2u m=1
+MP4 n4 n3 vdd vdd p18 W=20u L=0.2u m=1
+MP5 n4 clk vdd vdd p18 W=20u L=0.2u m=1
+MP6 n2 clk vdd vdd p18 W=20u L=0.2u m=1
+MNX1 n2 vip n2 gnd n18 W=20u L=0.2u m=1
+MNX2 n1 vin n1 gnd n18 W=20u L=0.2u m=1
+MN7 n5 clk gnd gnd n18 W=20u L=0.2u m=1
+.ENDS
+
+*****************************************************************************************
+* Library Name: comparator
+* Cell Name: pre_amp
+* View Name: schematic
+*****************************************************************************************
+
+.SUBCKT pre_amp Idc_2u gnda vdda vin vip voutn voutp //建立预放大器电路
+MM4 voutn voutp vdda vdda p18 W=1u L=1u m=1
+MM5 voutp voutn vdda vdda p18 W=1u L=1u m=1
+MM6 voutp voutp vdda vdda p18 W=1.8u L=1u m=1
+MM3 voutn voutn vdda vdda p18 W=1.8u L=1u m=1
+MM1 voutn vip net27 gnda n18 W=4u L=2u m=1
+MM2 voutp vin net27 gnda n18 W=4u L=2u m=1
+MM0 net27 Idc_2u gnda gnda n18 W=8u L=2u m=1
+MMbias Idc_2u Idc_2u gnda gnda n18 W=4u L=2u m=1
+.ENDS
+
+*****************************************************************************************
+* Library Name: comparator
+* Cell Name: comparator_preamp
+* View Name: schematic
+*****************************************************************************************
+
+.SUBCKT comparator_preamp Iin clk gnda out vdda vin vip
+XI43 clk gnda out vdda net34 net33 / comparatormove
+XI42 Iin gnda vdda vin vip net34 net33 / pre_amp
+.ENDS

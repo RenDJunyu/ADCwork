@@ -2,27 +2,27 @@
 .include 'models/Bandgap.cdl'
 .include 'models/misc.cdl'
 .include 'models/OTA.cdl'
+.include 'models/SHmodel.cdl'
 
-* 反向运放
-x1 vip vin out vdd vss OPAMP
-R1 vi vin 10k
-R2 vin out 10k
-R3 vip 0 10k
 
-vvdd vdd 0 3.3
-vvss vss 0 -3.3
-vvin vi 0 a
+xclk vdd vss clkin clk1 clk1d clk2 clk2d / CLOCKa
+xsh 0 vdd vss clk1 clk1d clk2d vin out / SH
+
+vclk clkin 0 pulse(-1.8 1.8 0.1n 0.1n 0.1n 500n 1u)
+vvdd vdd 0 1.8
+vvss vss 0 -1.8
+vvin vin 0 1$sin 0 0.1 50k
 
 .option post accurate probe
 .op
 .temp 27
-.dc a -3.3 3.3 0.1
-*.probe dc v(Vref)
-.print dc v(out)
+.tran 0.1n 20u
+.probe v(clk1) v(clk1d) v(clk2d) v(vin) v(out)
+.measure powerall avg power
 
-.lib 'models\ms018_v1p7.lib' tt
-.lib 'models\ms018_v1p7.lib' res_tt
-.lib 'models\ms018_v1p7.lib' mim_tt
-.lib 'models\ms018_v1p7.lib' bjt_tt
+.lib 'models\ms018_v1p7.lib' ff
+.lib 'models\ms018_v1p7.lib' res_ff
+.lib 'models\ms018_v1p7.lib' mim_ff
+.lib 'models\ms018_v1p7.lib' bjt_ff
 
 .end

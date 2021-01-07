@@ -1,0 +1,44 @@
+*****************************************************************************************
+* Library Name: ADC
+* Cell Name: SHmodel
+* View Name: schematic
+*****************************************************************************************
+
+.SUBCKT SH gnd vdd vss clkSB clkS clkH vin vout
+xs1 vdd vss clkSB comp vin / BOOSTRAP
+xs2 vdd vss clkH comp vout / BOOSTRAP
+xs3 vdd vss clkS Vy gnd / BOOSTRAP
+xs4 vdd vss clkS vout gnd / BOOSTRAP
+C1 vin Vy 10n
+C2 comp Vy 10n
+Xnp gnd Vy vout vdd vss / OPAMP
+
+.ENDS
+
+*****************************************************************************************
+* Library Name: boostrap
+* Cell Name: boostrap
+* View Name: schematic
+*****************************************************************************************
+
+.SUBCKT boostrap vdd vss clk vin out
+xI0 vdd vss clk Iclk / INV
+xI1 vdd vss netd4 Inetd4 / INV
+
+MN01 vdd vdd nets1 vss n18 W=20u L=5u m=1
+MP02 vdd Iclk nets2 vdd p18 W=20u L=5u m=1
+MN03 vdd nets1 nets3 vss n18 W=20u L=5u m=1
+MP04 netd4 Iclk vdd vdd p18 W=20u L=5u m=1
+MN05 netd4 clk nets5 vss n18 W=20u L=5u m=1
+MN06 netd6 clk vss vss n18 W=20u L=5u m=1
+MN07 netd7 vdd nets7 vss n18 W=20u L=5u m=1
+MP08 netd7 Inetd4 nets3 nets3 p18 W=20u L=5u m=1
+MN09 nets5 netd7 vin vss n18 W=20u L=5u m=1
+MN10 nets7 Iclk vss vss n18 W=20u L=5u m=1
+MN11 out netd7 vin vss n18 W=20u L=5u m=1
+MN12 nets5 Iclk vss vss n18 W=20u L=5u m=1
+MN13 netd4 netd7 nets5 vss n18 W=20u L=5u m=1
+
+C1 nets1 nets2 10u
+C2 nets3 nets5 10u
+.ENDS

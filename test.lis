@@ -1,0 +1,1326 @@
+ ****** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******                   
+  Copyright (C) 2011 Synopsys, Inc. All Rights Reserved.                        
+  Unpublished-rights reserved under US copyright laws.
+  This program is protected by law and is subject to the
+  terms and conditions of the license agreement from Synopsys.
+  Use of this program is your acceptance to be bound by the
+  license agreement. HSPICE is the trademark of Synopsys, Inc.
+  Input File: test.sp                                                           
+  Command line options: test.sp -o
+  lic:  
+  lic: FLEXlm: v10.8 
+  lic: USER:   86184                HOSTNAME: PC2line 
+  lic: HOSTID: "e86a64c8f38a 00ff6e5bbc8f 485f9955e58d 4a5f9955e58d ca5f9955e58d
+ "
+  lic: Using FLEXlm license file: 
+  lic: D:\HSPICE\license1.dat 
+  lic: Checkout 1 hspice 
+  lic: License/Maintenance for hspice will expire on 31-dec-2030/2030.12 
+  lic: NODE LOCKED license on hostid "e86a64c8f38a 00ff6e5bbc8f 485f9955e58d 4a5
+ f
+  lic:   
+ Init: read install configuration file: D:\HSPICE\hspice\meta.cfg
+
+ **warning**  runlvl smaller than 5, reset to 5  when accurate turned on
+  **warning** (models\ms018_v1p7.mdl:56) Model n18 device geometries will not be checked against the limits set by lmin, lmax, wmin and wmax. To enable this check, add a period(.) to the model name(i.e. enable model selector).
+  **warning** (models/SHmodel.cdl:7) Global net name, "gnd", in subckt pin list. The pin will be connected to the local net. Recommend to not use global net names in subckt pin lists.
+
+ **warning**  runlvl smaller than 5, reset to 5  when accurate turned on
+1****** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******                   
+ ******  
+ bandgap
+
+  ******  circuit name directory
+ circuit number to circuit name directory
+   number circuitname                     definition         multiplier
+        0 main circuit
+        1 xclk.                           clocka             1.00 
+        2 xsh.                            sh                 1.00 
+        3 xclk.xa1.                       nand               1.00 
+        4 xclk.xa2.                       nand               1.00 
+        5 xclk.xa3.                       nand               1.00 
+        6 xclk.xa4.                       nand               1.00 
+        7 xclk.xi1.                       inv                1.00 
+        8 xclk.xi2.                       inv1               1.00 
+        9 xclk.xi3.                       inv                1.00 
+       10 xclk.xi4.                       inv1               1.00 
+       11 xclk.xi5.                       inv                1.00 
+       12 xclk.xi6.                       inv                1.00 
+       13 xclk.xb1.                       buffer             1.00 
+       14 xclk.xb2.                       buffer             1.00 
+       15 xclk.xb3.                       buffer             1.00 
+       16 xclk.xb4.                       buffer             1.00 
+       17 xsh.xs1.                        boostrap           1.00 
+       18 xsh.xs2.                        boostrap           1.00 
+       19 xsh.xs3.                        boostrap           1.00 
+       20 xsh.xs4.                        boostrap           1.00 
+       21 xsh.xnp.                        opamp              1.00 
+       22 xclk.xi2.x1.                    inv2               1.00 
+       23 xclk.xi2.x2.                    inv2               1.00 
+       24 xclk.xi2.x3.                    inv2               1.00 
+       25 xclk.xi2.x4.                    inv2               1.00 
+       26 xclk.xi2.x5.                    inv2               1.00 
+       27 xclk.xi2.x6.                    inv2               1.00 
+       28 xclk.xi2.x7.                    inv2               1.00 
+       29 xclk.xi4.x1.                    inv2               1.00 
+       30 xclk.xi4.x2.                    inv2               1.00 
+       31 xclk.xi4.x3.                    inv2               1.00 
+       32 xclk.xi4.x4.                    inv2               1.00 
+       33 xclk.xi4.x5.                    inv2               1.00 
+       34 xclk.xi4.x6.                    inv2               1.00 
+       35 xclk.xi4.x7.                    inv2               1.00 
+       36 xclk.xb1.x1.                    inv                1.00 
+       37 xclk.xb1.x2.                    inv                1.00 
+       38 xclk.xb2.x1.                    inv                1.00 
+       39 xclk.xb2.x2.                    inv                1.00 
+       40 xclk.xb3.x1.                    inv                1.00 
+       41 xclk.xb3.x2.                    inv                1.00 
+       42 xclk.xb4.x1.                    inv                1.00 
+       43 xclk.xb4.x2.                    inv                1.00 
+       44 xsh.xs1.xi0.                    inv                1.00 
+       45 xsh.xs1.xi1.                    inv                1.00 
+       46 xsh.xs2.xi0.                    inv                1.00 
+       47 xsh.xs2.xi1.                    inv                1.00 
+       48 xsh.xs3.xi0.                    inv                1.00 
+       49 xsh.xs3.xi1.                    inv                1.00 
+       50 xsh.xs4.xi0.                    inv                1.00 
+       51 xsh.xs4.xi1.                    inv                1.00 
+1****** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******                   
+ ******  
+ bandgap
+
+  ******  mos   model parameters tnom=  25.000 temp=  25.000 *****
+ ***************************************************************************
+ ***        model parameters  model name:   0:n18      model type:nmos   ***
+ ***************************************************************************
+
+   *** general parameters ***
+    deriv=   0.           
+
+   ***  level 49  model parameters  ***
+
+       hspver=    2006.03               level=         49         
+      version=       3.24            paramchk=          0         
+       apwarn=          1                lite=          0         
+       vgslim=          0             binUnit=          2         
+       capMod=          3               xpart=          1         
+       mobMod=          1              nqsMod=          0         
+       stiMod=          0                 elm=          5         
+     sfvtflag=          0                 tox=  3.77e-009 meter   
+           xj=   1.6e-007 meter       binflag=          0         
+         lmin=   1.5e-007 meter          lmax=     1e-005 meter   
+         wmin=   1.9e-007 meter          wmax=     0.0001 meter   
+         lref=          0 meter          wref=          0 meter   
+         lint=1.57571e-008 meter          wint=-1.44505e-009 meter   
+        lmult=          1               wmult=          1         
+           ll=2.63528e-016                 lln=     1.1206         
+           lw=-2.26256e-016                 lwn=       0.92         
+          lwl=-2.05767e-022                  wl=-2.36646e-016         
+          wln=       1.06                  ww=-3.64097e-014         
+          wwn=   0.876847                 wwl=    -4e-021         
+          dwg= -5.96e-009 m/V             dwb=   4.5e-009 m/V^1/2 
+           xl=     8e-009                  xw=   2.2e-008         
+           a0=       0.83                 ags=       0.32 V^-1    
+           b0=     6e-008 meter            b1=          0 meter   
+         keta=     -0.003 V^-1           voff=     -0.103 V       
+        ngate=          0 cm^-3           vbx=          0 V       
+          vbm=         -3 V                xt=  1.55e-007 meter   
+         vth0=       0.35 V               nch=3.8694e+017 cm^-3   
+         nsub=     6e+016 cm^-3           nlx=7.5451e-008 meter   
+       gamma1=          0 V^-1/2       gamma2=          0 V^-1/2  
+           k1=   0.680104 V^1/2            k2= -0.0499778         
+           k3=         10                 k3b=         -3 V^-1    
+           w0=5.58201e-007 meter          dvt0=        1.3         
+         dvt1=   0.577163                dvt2=  -0.171755 V^-1    
+        dvt0w=          0 meter^-1      dvt1w=          0 meter^-1
+        dvt2w=          0 V^-1           dsub=        0.4         
+         eta0=      0.028                etab=     -0.027 V^-1    
+           u0=      0.034 m^2/V/sec         ua= -1.03e-009 m/V     
+           ub=2.36667e-018 (m/V)^2          uc=   1.2e-010 V^-1    
+         vsat=      82500 m/sec            a1=          0 v^-1    
+           a2=       0.99               delta=       0.01 V       
+         rdsw=    55.5497 ohm-um         prwg=        0.4 V^-1    
+         prwb=      -0.24 V^-1/2           wr=          1         
+         pclm=        1.2             pdiblc1=      0.025         
+      pdiblc2=     0.0038             pdiblcb=          0 V^-1    
+       pscbe1=  3.45e+008 V/m          pscbe2=     1e-006 V/m     
+        drout=       0.56                pvag=          0         
+      nfactor=       1.25                cdsc=          0 f/m^2   
+        cdscb=          0 f/V/m^2       cdscd=     0.0001 f/V/m^2 
+          cit=          0 f/m^2        alpha0=1.7754e-008 m/V     
+        beta0=    11.1684 V               dlc=   8.5e-009 meter   
+          dwc=   4.5e-008 meter           clc=     1e-007 meter   
+          cle=        0.6                cgso= 3.885e-010 f/m     
+         cgdo= 3.885e-010 f/m            cgbo=8.24355e-010 f/m     
+         cgsl=          0 f/m            cgdl=          0 f/m     
+       ckappa=        0.6                  cf=          0 f/m     
+         acde=       0.64 m/V            moin=         24 V^1/2   
+         toxm=  3.87e-009 m            dtoxcv=          0 m       
+          vfb (not used)                alpha1=     0.1764 1/V     
+         ijth=        0.1 A              noff=     1.2025         
+       voffcv=          0                 tcj=   0.000842 1/K     
+        tcjsw=   0.000669 1/K          tcjswg=   0.000669 1/K     
+          tpb=    0.00147 V/K           tpbsw=   0.000868 V/K     
+       tpbswg=   0.000868 V/K             llc=2.63528e-016         
+          lwc=-2.26256e-016                lwlc=-2.05767e-022         
+          wlc=-2.36646e-016                 wwc=-3.64097e-014         
+         wwlc=    -4e-021                tnom=     298.15 K       
+          kt1=  -0.257287 V              kt1l=    -1e-009         
+          kt2=      -0.04                 ute=      -1.55         
+          ua1=  1.76e-009 m/V             ub1=  -2.4e-018 (m/V)^2 
+          uc1=    -1e-010 m/V^2            at=      37000 m/s     
+          prt=        -55         
+          using Berkeley noise model       noiMod=          2         
+         noia=8.2282e+019                noib=      13327         
+         noic=-2.4937e-014                  em=1.7767e+007         
+           ef=      0.818                  af=          1         
+           kf=          0              gdsnoi=-1.23457e-029         
+          using Berkeley diodes          using ACM 
+          acm=        12                 hdif=    2e-007 meter    
+         ldif=    7e-008 meter             js= 3.52e-007 amp/m^2  
+          jsw=    3e-013 amp/m            xti=      3.25          
+           nj=    1.0392                   cj= 0.0009196 f/m^2    
+           mj=     0.346                   pb=       0.7 V        
+         cjsw=7.5525e-011 f/m             mjsw=     0.538          
+          php (not used)                  pbsw=         1 V        
+       cjgate (not used)                 cjswg=3.971e-010 f/m      
+        mjswg=     0.538                pbswg=         1 V        
+        lketa=  -1.7e-009               lvoff=  -3.3e-009         
+          lu0=2.30577e-011                 lua=7.73498e-019         
+     lnfactor=   4.5e-008                lua1=     6e-018         
+         luc1=   1.7e-017             lalpha1= 7.625e-009         
+        wvth0=-2.97095e-008                 wk1=-2.48968e-008         
+          wu0=-3.10097e-009                wua1=  -1.1e-016         
+        pvth0=  -2.5e-015                 pk1=   1.3e-015         
+          pua=    -1e-024                 puc=   1.5e-024         
+        pvsat=  -8.3e-010               ppclm=     3e-015         
+     ppdiblc2=   2.7e-016                pua1=    -5e-025         
+         puc1=    -3e-024                 pat=  -7.5e-010         
+ ***************************************************************************
+ ***        model parameters  model name:   0:p18      model type:pmos   ***
+ ***************************************************************************
+
+   *** general parameters ***
+    deriv=   0.           
+
+   ***  level 49  model parameters  ***
+
+       hspver=    2006.03               level=         49         
+      version=       3.24            paramchk=          0         
+       apwarn=          1                lite=          0         
+       vgslim=          0             binUnit=          2         
+       capMod=          3               xpart=          1         
+       mobMod=          1              nqsMod=          0         
+       stiMod=          0                 elm=          5         
+     sfvtflag=          0                 tox=  3.64e-009 meter   
+           xj=   1.7e-007 meter       binflag=          0         
+         lmin=   1.5e-007 meter          lmax=     1e-005 meter   
+         wmin=   1.9e-007 meter          wmax=     0.0001 meter   
+         lref=          0 meter          wref=          0 meter   
+         lint=     1e-008 meter          wint=     8e-009 meter   
+        lmult=          1               wmult=          1         
+           ll=   3.4e-015                 lln=          1         
+           lw= -3.36e-016                 lwn=          1         
+          lwl=          0                  wl=3.59042e-015         
+          wln=      1.045                  ww=  -1.9e-015         
+          wwn=          1                 wwl=-1.1205e-021         
+          dwg=-1.7362e-008 m/V             dwb=     2e-008 m/V^1/2 
+           xl= -1.57e-008                  xw=   2.2e-008         
+           a0=          1                 ags=        0.2 V^-1    
+           b0=   6.3e-008 meter            b1=          0 meter   
+         keta=       0.02 V^-1           voff=     -0.095 V       
+        ngate= 3.168e+020 cm^-3           vbx=          0 V       
+          vbm=         -3 V                xt=  1.55e-007 meter   
+         vth0=     -0.382 V               nch=   5.5e+017 cm^-3   
+         nsub=     6e+016 cm^-3           nlx=     9e-008 meter   
+       gamma1=          0 V^-1/2       gamma2=          0 V^-1/2  
+           k1=   0.587239 V^1/2            k2= 0.00709069         
+           k3=        2.6                 k3b=     2.4862 V^-1    
+           w0=          0 meter          dvt0=   0.719493         
+         dvt1=   0.246744                dvt2=  0.0780897 V^-1    
+        dvt0w=          0 meter^-1      dvt1w=     800000 meter^-1
+        dvt2w=          0 V^-1           dsub=       0.56         
+         eta0=       0.04                etab=     -0.025 V^-1    
+           u0=   0.008661 m^2/V/sec         ua=  2.85e-010 m/V     
+           ub=     1e-018 (m/V)^2          uc= -4.77e-011 V^-1    
+         vsat=     100000 m/sec            a1=          0 v^-1    
+           a2=       0.99               delta=       0.01 V       
+         rdsw=        455 ohm-um         prwg=          0 V^-1    
+         prwb=       -0.4 V^-1/2           wr=          1         
+         pclm=        0.7             pdiblc1=          0         
+      pdiblc2=      0.007             pdiblcb=          0 V^-1    
+       pscbe1=     4e+008 V/m          pscbe2=     1e-007 V/m     
+        drout=       0.56                pvag=          0         
+      nfactor=        0.9                cdsc=          0 f/m^2   
+        cdscb=          0 f/V/m^2       cdscd=          0 f/V/m^2 
+          cit=          0 f/m^2        alpha0=     7e-008 m/V     
+        beta0=    22.8424 V               dlc=  -1.5e-009 meter   
+          dwc=     8e-009 meter           clc=     1e-007 meter   
+          cle=        0.6                cgso=  4.41e-010 f/m     
+         cgdo=  4.41e-010 f/m            cgbo=1.51786e-010 f/m     
+         cgsl=          0 f/m            cgdl=          0 f/m     
+       ckappa=        0.6                  cf=          0 f/m     
+         acde=   0.850508 m/V            moin=    14.9534 V^1/2   
+         toxm=  3.74e-009 m            dtoxcv=          0 m       
+          vfb (not used)                alpha1=    7.04917 1/V     
+         ijth=        0.1 A              noff=    1.43182         
+       voffcv=          0                 tcj=   0.000876 1/K     
+        tcjsw=   0.000745 1/K          tcjswg=   0.000745 1/K     
+          tpb=    0.00153 V/K           tpbsw=    0.00117 V/K     
+       tpbswg=    0.00117 V/K             llc=   3.4e-015         
+          lwc= -3.36e-016                lwlc=          0         
+          wlc=3.59042e-015                 wwc=  -1.9e-015         
+         wwlc=-1.1205e-021                tnom=     298.15 K       
+          kt1=  -0.257701 V              kt1l=    -8e-009         
+          kt2= -0.0309799                 ute=   -1.27036         
+          ua1=5.38663e-010 m/V             ub1=-2.071e-018 (m/V)^2 
+          uc1=2.06097e-011 m/V^2            at=      10000 m/s     
+          prt=         90         
+          using Berkeley noise model       noiMod=          2         
+         noia=3.3617e+018                noib=     195360         
+         noic=5.2658e-012                  em=6.2548e+007         
+           ef=     1.1307                  af=          1         
+           kf=          0              gdsnoi=-1.23457e-029         
+          using Berkeley diodes          using ACM 
+          acm=        12                 hdif=    2e-007 meter    
+         ldif=    7e-008 meter             js= 1.66e-007 amp/m^2  
+          jsw=  1.2e-013 amp/m            xti=       4.5          
+           nj=    1.0384                   cj= 0.0010165 f/m^2    
+           mj=     0.415                   pb=     0.817 V        
+         cjsw=9.3955e-011 f/m             mjsw=     0.489          
+          php (not used)                  pbsw=         1 V        
+       cjgate (not used)                 cjswg=4.8165e-010 f/m      
+        mjswg=     0.489                pbswg=         1 V        
+        lketa=  -8.5e-009               lvoff=  -1.7e-009         
+          lk1=3.55321e-009                 lu0=    -2e-011         
+          lua=   5.5e-018            lnfactor=     1e-007         
+       lbeta0=  -7.5e-008                lkt2=    -3e-009         
+        wvoff=    -2e-009               wvth0=1.26754e-008         
+          wu0=1.38154e-010                 wuc=3.1668e-017         
+         wua1=   1.1e-016               pketa=     5e-016         
+        pvoff=    -1e-016               pvth0=  -2.5e-016         
+          pua=    -2e-024                 puc=  -2.5e-024         
+     pnfactor=    -5e-015                pkt2=-6.53317e-016         
+         pua1= -2.37e-024                 pat=    -1e-009         
+ ***************************************************************************
+ *** common model parameters  model name:  21:n08      model type:nmos   ***
+ ***************************************************************************
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** geometry parameters ***
+       ld=  16.00n meters      lmlt=   1.00                wd=   0.    meters 
+     wmlt=   1.00                xl=   0.    meters        xw=   0.    meters 
+     lref=   0.    meters      wref=   0.    meters      lref=   0.    meters 
+     wref=   0.    meters     xlref=   0.    meters     xwref=   0.    meters 
+     lmin=   0.    meters      wmin=   0.    meters      lmax=   0.    meters 
+     wmax=   0.    meters 
+
+   2*** threshold voltage parameters ***
+      vto= 700.00m volts        nss=   0.    1/cm**2      tpg=   1.00         
+      phi= 700.00m volts      gamma= 400.00m v**0.5      bulk=  gnd           
+    ngate=   0.    cm**3       nsub= 2.9e+16 1/cm**3   delvto=   0.    volts  
+
+   3*** gate overlap capacitance parameters ***
+     cgbo= 700.00p f/meter     cgdo= 220.00p f/meter     cgso= 220.00p f/meter
+     meto=   0.    meters 
+
+   4*** gate capacitance parameters ***
+    capop=   2.00               cf1=   0.    volts        cf2= 100.00m volts  
+      cf3=   1.00  volts        cf4=  50.00               cf5= 666.67m        
+      cf6= 500.00               xqc= 500.00m              tox=  14.00n meters 
+      cox=   2.47m f/m**2 
+
+   5*** diffusion parasitic parameters ***
+      acm=   0.                  is=  10.00f amps          js=   0.    a/m**2 
+      jsw=   0.    amp/m        nds=   1.00               cbd=   0.    farad  
+      cbs=   0.    farad         cj= 770.00u f/m**2      cjsw= 380.00p f/m    
+   cjgate= 380.00p f/m           mj= 500.00m             mjsw= 380.00m        
+       pb= 800.00m volts        php= 800.00m volts         tt=   0.    secs   
+     hdif=   0.    meters      ldif=   0.    meters        rd=   0.    ohms   
+       rs=   0.    ohms         rsh=   0.    ohms/sq       fc=   0.           
+    alpha=   0.                 vcr=   0.    volts      iirat=   0.           
+      rdc=   0.    ohms         rsc=   0.    ohms           n=   1.00         
+     vnds=  -1.00  volts  
+
+   6*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                  eg=   1.11  ev     
+     gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.           
+      bex=  -1.50               tcv=   0.    v/deg k      trd=   0.    /deg   
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+
+   7*** noise parameters ***
+       kf=   0.                  af=   1.00              nlev=   2.00         
+   gdsnoi=   1.00         
+
+   ***  level  1  model parameters  ***
+
+   lambda=  40.00m /v            kp= 110.00u a/v**2 
+ ***************************************************************************
+ *** common model parameters  model name:  21:p08      model type:pmos   ***
+ ***************************************************************************
+     names  values   units     names  values   units     names  values   units
+     -----  ------   -----     -----  ------   -----     -----  ------   -----
+
+   1*** geometry parameters ***
+       ld=  14.00n meters      lmlt=   1.00                wd=   0.    meters 
+     wmlt=   1.00                xl=   0.    meters        xw=   0.    meters 
+     lref=   0.    meters      wref=   0.    meters      lref=   0.    meters 
+     wref=   0.    meters     xlref=   0.    meters     xwref=   0.    meters 
+     lmin=   0.    meters      wmin=   0.    meters      lmax=   0.    meters 
+     wmax=   0.    meters 
+
+   2*** threshold voltage parameters ***
+      vto=-700.00m volts        nss=   0.    1/cm**2      tpg=   1.00         
+      phi= 800.00m volts      gamma= 570.00m v**0.5      bulk=  gnd           
+    ngate=   0.    cm**3       nsub= 5.9e+16 1/cm**3   delvto=   0.    volts  
+
+   3*** gate overlap capacitance parameters ***
+     cgbo= 700.00p f/meter     cgdo= 220.00p f/meter     cgso= 220.00p f/meter
+     meto=   0.    meters 
+
+   4*** gate capacitance parameters ***
+    capop=   2.00               cf1=   0.    volts        cf2= 100.00m volts  
+      cf3=   1.00  volts        cf4=  50.00               cf5= 666.67m        
+      cf6= 500.00               xqc= 500.00m              tox=  14.00n meters 
+      cox=   2.47m f/m**2 
+
+   5*** diffusion parasitic parameters ***
+      acm=   0.                  is=  10.00f amps          js=   0.    a/m**2 
+      jsw=   0.    amp/m        nds=   1.00               cbd=   0.    farad  
+      cbs=   0.    farad         cj= 560.00u f/m**2      cjsw= 350.00p f/m    
+   cjgate= 350.00p f/m           mj= 500.00m             mjsw= 350.00m        
+       pb= 800.00m volts        php= 800.00m volts         tt=   0.    secs   
+     hdif=   0.    meters      ldif=   0.    meters        rd=   0.    ohms   
+       rs=   0.    ohms         rsh=   0.    ohms/sq       fc=   0.           
+    alpha=   0.                 vcr=   0.    volts      iirat=   0.           
+      rdc=   0.    ohms         rsc=   0.    ohms           n=   1.00         
+     vnds=  -1.00  volts  
+
+   6*** temperature effect parameters ***
+     tlev=   0.               tlevc=   0.                  eg=   1.11  ev     
+     gap1= 702.00u ev/deg      gap2=   1.11k deg          xti=   0.           
+      bex=  -1.50               tcv=   0.    v/deg k      trd=   0.    /deg   
+      trs=   0.    /deg         cta=   0.    /deg         ctp=   0.    /deg   
+
+   7*** noise parameters ***
+       kf=   0.                  af=   1.00              nlev=   2.00         
+   gdsnoi=   1.00         
+
+   ***  level  1  model parameters  ***
+
+   lambda=  50.00m /v            kp=  50.00u a/v**2 
+  **info** (test.sp:11) DC voltage reset to initial transient source value              in source        0:vclk                new dc= -0.1800D+01
+ 
+
+  
+  **warning** (models/SHmodel.cdl:33) Only 1 connection at node netd6 called in element xsh.xs1.mn06.
+      
+ **info** set option symb=1 internally to help for convergence.
+ *****************************************************************
+ ******  option summary
+ ******
+ runlvl  = 5         bypass  = 2         
+  Opening plot unit= 79
+ file=test.pa0                                                                 
+
+1****** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******                   
+ ******  
+ bandgap
+
+  ******  operating point information tnom=  25.000 temp=  27.000 *****
+ ***** operating point status is all       simulation time is     0.     
+     node    =voltage       node    =voltage       node    =voltage
+
+ + 0:clk1    =  -1.8000   0:clk1d   =  -1.8000   0:clk2    =   1.8000 
+ + 0:clk2d   =   1.8000   0:clkin   =  -1.8000   0:out     =   1.8000 
+ + 0:vdd     =   1.8000   0:vin     =   1.0000   0:vss     =  -1.8000 
+ + 1:net01   =   1.8000   1:net02   =  -1.8000   1:net03   =   1.8000 
+ + 1:net04   =  -1.8000   1:net07   =   1.8000   1:net08   =  -1.8000 
+ + 1:net09   =   1.8000   1:net10   =  -1.8000   1:net11   =   1.8000 
+ + 1:net12   =  -1.8000   2:comp    = 389.2997m  2:vy      =  -1.7824 
+ + 3:net01   =  -1.7229   4:net01   =  -1.8000   5:net01   =  -1.8000 
+ + 6:net01   =  -1.7229   8:net01   =   1.8000   8:net02   =  -1.8000 
+ + 8:net03   =   1.8000   8:net04   =  -1.8000   8:net05   =   1.8000 
+ + 8:net06   =  -1.8000  10:net01   =  -1.8000  10:net02   =   1.8000 
+ +10:net03   =  -1.8000  10:net04   =   1.8000  10:net05   =  -1.8000 
+ +10:net06   =   1.8000  13:in_inv  =   1.8000  14:in_inv  =   1.8000 
+ +15:in_inv  =  -1.8000  16:in_inv  =  -1.8000  17:iclk    =   1.8000 
+ +17:inetd4  =   1.8000  17:netd4   =  -1.7985  17:netd6   =  -1.8000 
+ +17:netd7   =  -1.8000  17:nets1   =   1.3364  17:nets2   =   1.8000 
+ +17:nets3   = 899.3399m 17:nets5   =  -1.8000  17:nets7   =  -1.8000 
+ +18:iclk    =  -1.8000  18:inetd4  =  -1.8000  18:netd4   =   1.8000 
+ +18:netd6   =  -1.8000  18:netd7   = 822.0428m 18:nets1   =   1.3364 
+ +18:nets2   =   1.8000  18:nets3   = 822.0432m 18:nets5   =   1.2225 
+ +18:nets7   = 822.0421m 19:iclk    =   1.8000  19:inetd4  =   1.8000 
+ +19:netd4   =  -1.7985  19:netd6   =  -1.8000  19:netd7   =  -1.8000 
+ +19:nets1   =   1.3364  19:nets2   =   1.8000  19:nets3   = 899.3397m
+ +19:nets5   =  -1.8000  19:nets7   =  -1.8000  20:iclk    =   1.8000 
+ +20:inetd4  =   1.8000  20:netd4   =  -1.7985  20:netd6   =  -1.8000 
+ +20:netd7   =  -1.8000  20:nets1   =   1.3364  20:nets2   =   1.8000 
+ +20:nets3   = 899.3399m 20:nets5   =  -1.8000  20:nets7   =  -1.8000 
+ +21:3       =-361.5828m 21:4       =-829.8936m 21:5       =  -1.8000 
+ +21:7       = 933.4246m
+
+
+ **** voltage sources
+
+ subckt                                                  
+ element   0:vclk      0:vvdd      0:vvss      0:vvin    
+  volts      -1.8000      1.8000     -1.8000      1.0000 
+  current     0.        -92.8235u    92.8236u    -3.4107p
+  power       0.        167.0823u   167.0824u     3.4107p
+
+     total voltage source power dissipation=  334.1647u       watts
+
+
+
+ **** current sources
+
+ subckt    xsh.xnp   
+ element  21:ib      
+  volts       2.7334 
+  current    45.0000u
+  power    -123.0041u
+
+
+     total current source power dissipation=-123.0041u       watts
+
+
+ **** mosfets
+
+
+ subckt    xclk.xa1    xclk.xa1    xclk.xa1    xclk.xa1    xclk.xa2  
+ element   3:mpm2      3:mpm1      3:mnm1      3:mnm2      4:mpm2    
+ model     0:p18       0:p18       0:n18       0:n18       0:p18     
+ region        Linear      Linear      Cutoff      Cutoff      Cutoff
+  id        -60.3804p   -60.3804p   112.9021p   109.6106p  -314.9950p
+  ibs       7.829e-27   7.829e-27  -2.413e-26    -2.2557a   4.131e-26
+  ibd       1.601e-24   1.601e-24    -2.2557a    -4.0274p    16.7420p
+  vgs        -3.6000     -3.6000      8.1802n   -77.1204m   -23.4459n
+  vds       -23.4459n   -23.4459n    77.1205m     3.5229     -3.6000 
+  vbs         0.          0.          0.        -77.1205m     0.     
+  vth      -459.1981m  -459.1981m   417.9057m   382.2829m  -397.3947m
+  vdsat      -2.0438     -2.0438     42.4407m    42.7222m   -45.3381m
+  vod        -3.1408     -3.1408   -417.9057m  -459.4033m   397.3947m
+  beta        1.2382m     1.2382m     4.8359m     4.8439m     2.7178m
+  gam eff   608.2173m   608.2173m   766.6028m   770.6096m   608.2173m
+  gm          2.8410p     2.8410p     3.2781n     3.1942n     8.3865n
+  gds         2.6006m     2.6006m   307.7139p   112.9327p   193.1844p
+  gmb         4.9420p     4.9420p   954.4752p   722.2815p     2.6369n
+  cdtot      12.7297f    12.7297f     2.4643f     1.6082f     3.6596f
+  cgtot       7.7482f     7.7482f     2.3699f     2.3699f     4.6727f
+  cstot      10.8987f    10.8987f     2.5312f     2.4643f     5.7275f
+  cbtot       9.2736f     9.2736f     4.3254f     3.4025f     7.1366f
+  cgs         3.8670f     3.8670f   760.0529a   760.0085a     1.7285f
+  cgd         3.9103f     3.9103f   759.9619a   759.9616a     1.7311f
+
+
+
+ subckt    xclk.xa2    xclk.xa2    xclk.xa2    xclk.xa3    xclk.xa3  
+ element   4:mpm1      4:mnm1      4:mnm2      5:mpm2      5:mpm1    
+ model     0:p18       0:n18       0:n18       0:p18       0:p18     
+ region        Cutoff      Linear      Linear      Cutoff      Cutoff
+  id       -314.9960p   677.8750p   677.8749p  -314.9960p  -315.0011p
+  ibs       4.131e-26  -1.448e-25  -1.543e-23   4.131e-26   4.131e-26
+  ibd        16.7420p  -1.514e-23  -3.043e-23    16.7420p    16.7423p
+  vgs      -139.4204n     3.6000      3.6000   -139.4204n  -744.4057n
+  vds        -3.6000    171.8426n   171.8426n    -3.6000     -3.6000 
+  vbs         0.          0.       -171.8426n     0.          0.     
+  vth      -397.3947m   419.0454m   419.0455m  -397.3947m  -397.3947m
+  vdsat     -45.3381m     1.2614      1.2614    -45.3381m   -45.3381m
+  vod       397.3946m     3.1810      3.1810    397.3946m   397.3940m
+  beta        2.7178m     1.6943m     1.6943m     2.7178m     2.7178m
+  gam eff   608.2173m   766.6028m   766.6028m   608.2173m   608.2173m
+  gm          8.3865n     0.          0.          8.3865n     8.3867n
+  gds       193.1850p     4.0209m     4.0209m   193.1850p   193.1881p
+  gmb         2.6369n    52.9160p    52.9159p     2.6369n     2.6370n
+  cdtot       3.6596f     6.5130f     6.5130f     3.6596f     3.6596f
+  cgtot       4.6727f     4.3343f     4.3343f     4.6727f     4.6727f
+  cstot       5.7275f     5.5557f     5.5557f     5.7275f     5.7275f
+  cbtot       7.1366f     4.4270f     4.4270f     7.1366f     7.1366f
+  cgs         1.7285f     2.0478f     2.0478f     1.7285f     1.7285f
+  cgd         1.7311f     2.0610f     2.0610f     1.7311f     1.7311f
+
+
+
+ subckt    xclk.xa3    xclk.xa3    xclk.xa4    xclk.xa4    xclk.xa4  
+ element   5:mnm1      5:mnm2      6:mpm2      6:mpm1      6:mnm1    
+ model     0:n18       0:n18       0:p18       0:p18       0:n18     
+ region        Linear      Linear      Linear      Linear      Cutoff
+  id        677.8815p   677.8815p   -60.3804p   -60.3804p   112.9021p
+  ibs      -1.448e-25  -1.543e-23   7.829e-27   7.829e-27  -2.413e-26
+  ibd      -1.514e-23  -3.043e-23   1.601e-24   1.601e-24    -2.2557a
+  vgs         3.6000      3.6000     -3.6000     -3.6000      8.1802n
+  vds       171.8443n   171.8443n   -23.4460n   -23.4460n    77.1207m
+  vbs         0.       -171.8443n     0.          0.          0.     
+  vth       419.0454m   419.0455m  -459.1981m  -459.1981m   417.9057m
+  vdsat       1.2614      1.2614     -2.0438     -2.0438     42.4407m
+  vod         3.1810      3.1810     -3.1408     -3.1408   -417.9057m
+  beta        1.6943m     1.6943m     1.2382m     1.2382m     4.8359m
+  gam eff   766.6028m   766.6028m   608.2173m   608.2173m   766.6028m
+  gm          0.          0.          2.8410p     2.8410p     3.2781n
+  gds         4.0209m     4.0209m     2.6006m     2.6006m   307.7128p
+  gmb        52.9165p    52.9165p     4.9420p     4.9420p   954.4756p
+  cdtot       6.5130f     6.5130f    12.7297f    12.7297f     2.4643f
+  cgtot       4.3343f     4.3343f     7.7482f     7.7482f     2.3699f
+  cstot       5.5557f     5.5557f    10.8987f    10.8987f     2.5312f
+  cbtot       4.4270f     4.4270f     9.2736f     9.2736f     4.3254f
+  cgs         2.0478f     2.0478f     3.8670f     3.8670f   760.0529a
+  cgd         2.0610f     2.0610f     3.9103f     3.9103f   759.9619a
+
+
+
+ subckt    xclk.xa4    xclk.xi1    xclk.xi1    xclk.xi3    xclk.xi3  
+ element   6:mnm2      7:mpm2      7:mnm1      9:mpm2      9:mnm1    
+ model     0:n18       0:p18       0:n18       0:p18       0:n18     
+ region        Cutoff      Cutoff      Linear      Linear      Cutoff
+  id        109.6107p  -314.9951p   338.9370p    -1.9171n     1.8382n
+  ibs        -2.2557a   4.131e-26  -7.238e-26   2.486e-25  -3.933e-25
+  ibd        -4.0274p    16.7420p  -7.572e-24   5.083e-23   -71.7267p
+  vgs       -77.1203m   -23.4459n     3.6000     -3.6000    343.6885n
+  vds         3.5229     -3.6000     85.9212n  -744.4130n     3.6000 
+  vbs       -77.1207m     0.          0.          0.          0.     
+  vth       382.2829m  -397.3947m   419.0454m  -459.1981m   365.8435m
+  vdsat      42.7222m   -45.3381m     1.2614     -2.0438     42.4474m
+  vod      -459.4032m   397.3947m     3.1810     -3.1408   -365.8432m
+  beta        4.8439m     2.7178m     1.6943m     1.2382m     4.8301m
+  gam eff   770.6096m   608.2173m   766.6028m   608.2173m   766.6028m
+  gm          3.1942n     8.3865n     0.         90.2021p    52.7110n
+  gds       112.9327p   193.1844p     4.0209m     2.6006m     1.8360n
+  gmb       722.2819p     2.6369n    26.4579p   156.9080p    12.1825n
+  cdtot       1.6082f     3.6596f     6.5130f    12.7297f     1.6082f
+  cgtot       2.3699f     4.6727f     4.3343f     7.7482f     2.3701f
+  cstot       2.4643f     5.7275f     5.5557f    10.8987f     2.5314f
+  cbtot       3.4025f     7.1366f     4.4270f     9.2736f     3.4693f
+  cgs       760.0085a     1.7285f     2.0478f     3.8670f   760.2248a
+  cgd       759.9616a     1.7311f     2.0610f     3.9103f   759.9589a
+
+
+
+ subckt    xclk.xi5    xclk.xi5    xclk.xi6    xclk.xi6    xsh.xs1   
+ element  11:mpm2     11:mnm1     12:mpm2     12:mnm1     17:mn01    
+ model     0:p18       0:n18       0:p18       0:n18       0:n18     
+ region        Linear      Cutoff      Cutoff      Linear      Cutoff
+  id         -1.9171n     1.8381n  -315.0011p   338.9434p     2.6730p
+  ibs       2.486e-25  -3.933e-25   4.131e-26  -7.238e-26   -20.7396a
+  ibd       5.083e-23   -71.7260p    16.7423p  -7.572e-24   -20.7396a
+  vgs        -3.6000      0.       -744.4057n     3.6000    463.5524m
+  vds      -744.4057n     3.6000     -3.6000     85.9228n   463.5524m
+  vbs         0.          0.          0.          0.         -3.1364 
+  vth      -459.1981m   365.8435m  -397.3947m   419.0454m   889.8912m
+  vdsat      -2.0438     42.4474m   -45.3381m     1.2614     46.1464m
+  vod        -3.1408   -365.8435m   397.3940m     3.1810   -426.3389m
+  beta        1.2382m     4.8301m     2.7178m     1.6943m     1.4245m
+  gam eff   608.2173m   766.6028m   608.2173m   766.6028m   879.3706m
+  gm         90.2012p    52.7105n     8.3867n     0.         91.9305p
+  gds         2.6006m     1.8360n   193.1881p     4.0209m   104.9411f
+  gmb       156.9064p    12.1824n     2.6370n    26.4584p    11.0881p
+  cdtot      12.7297f     1.6082f     3.6596f     6.5130f    15.8691f
+  cgtot       7.7482f     2.3701f     4.6727f     4.3343f   134.4869f
+  cstot      10.8987f     2.5314f     5.7275f     5.5557f    16.2771f
+  cbtot       9.2736f     3.4693f     7.1366f     4.4270f   135.6470f
+  cgs         3.8670f   760.2248a     1.7285f     2.0478f     7.7513f
+  cgd         3.9103f   759.9589a     1.7311f     2.0610f     7.7440f
+
+
+
+ subckt    xsh.xs1     xsh.xs1     xsh.xs1     xsh.xs1     xsh.xs1   
+ element  17:mp02     17:mn03     17:mp04     17:mn05     17:mn06    
+ model     0:p18       0:n18       0:p18       0:n18       0:n18     
+ region        Cutoff      Cutoff      Cutoff      Cutoff      Cutoff
+  id         37.5972a     7.1972p    -6.1578p     6.8010p    -8.3207a
+  ibs       5.129e-23   -20.7396a   4.956e-27  -6.931e-23     0.     
+  ibd         0.        -23.1280a   253.2774f    -1.1188a   1.378e-24
+  vgs      -585.0752n   437.1077m  -744.4076n    -3.8840n    85.9228n
+  vds       159.3324n   900.6601m    -3.5985      1.4904m    -1.7858n
+  vbs       159.3324n    -2.6993      0.        -89.8068n     0.     
+  vth      -370.0150m   836.7157m  -370.0150m   336.5713m   336.5712m
+  vdsat     -40.0468m    45.7606m   -40.0468m    40.2807m    40.2807m
+  vod       370.0144m  -399.6080m   370.0142m  -336.5713m  -336.5712m
+  beta      298.7068u     1.4218m   298.7068u     1.3826m     1.3826m
+  gam eff   574.4626m   868.1671m   574.4626m   773.0195m   773.0195m
+  gm          1.1860f   245.7561p   194.2567p   206.9744p   253.2222a
+  gds       235.9663p   261.4021f    75.9137f     4.4672n     4.6594n
+  gmb       401.5461a    32.1278p    65.2880p    67.8195p    82.9967a
+  cdtot      28.8212f    15.8691f    18.3663f    24.8243f    24.8260f
+  cgtot     241.3300f   140.4576f   241.2855f   249.4682f   249.4717f
+  cstot      28.9074f    16.7310f    28.7569f    24.8184f    24.8702f
+  cbtot     263.7478f   142.0648f   253.5204f   267.7040f   267.7176f
+  cgs         8.9726f     7.7547f     8.2974f     7.7997f     7.8444f
+  cgd         8.2062f     7.7440f     8.8216f     7.8289f     7.7888f
+
+
+
+ subckt    xsh.xs1     xsh.xs1     xsh.xs1     xsh.xs1     xsh.xs1   
+ element  17:mn07     17:mp08     17:mn09     17:mn10     17:mn11    
+ model     0:n18       0:p18       0:n18       0:n18       0:n18     
+ region        Linear      Cutoff      Cutoff      Linear      Cutoff
+  id          5.3986p  -2.359e-24  -126.5329p     5.3986p     0.     
+  ibs      -2.636e-24   1.371e-27  -273.1289f  -7.376e-27   -20.7396a
+  ibd      -5.250e-24     8.6450a  -6.947e-23  -2.621e-24   -20.7396a
+  vgs         3.6000    900.6593m    -2.1893      3.6000     -2.1893 
+  vds         3.4064n    -2.6993     -2.1893      3.4065n   610.7003m
+  vbs        -3.4065n     0.         -2.1893      0.         -2.1893 
+  vth       336.5713m  -370.0150m   336.5713m   336.5712m   768.6946m
+  vdsat       3.1158    -40.0460m    40.2807m     3.1158     45.2355m
+  vod         3.2634      1.2707     -2.5259      3.2634     -2.9580 
+  beta      494.9657u   298.7068u     1.3826m   494.9658u     1.4203m
+  gam eff   773.0195m   574.4626m   773.0195m   773.0195m   854.1914m
+  gm          0.        7.490e-23     3.8510n     0.          0.     
+  gds         1.5938m   2.773e-26     4.5314p     1.5938m     0.     
+  gmb       896.8081f   3.175e-23     1.2488n   896.8137f     0.     
+  cdtot     946.0318f    19.3852f    24.7878f   946.0318f    16.6137f
+  cgtot     899.3489f   507.3086f   249.4376f   899.3489f   249.3765f
+  cstot     899.3881f    28.5870f    17.3632f   899.3881f    17.3632f
+  cbtot     296.7206f   519.9779f   260.4172f   296.7206f   252.3683f
+  cgs       447.4509f     8.8379f     7.7440f   447.4509f     7.7530f
+  cgd       445.0434f     8.8216f     7.8435f   445.0434f     7.7440f
+
+
+
+ subckt    xsh.xs1     xsh.xs1     xsh.xs2     xsh.xs2     xsh.xs2   
+ element  17:mn12     17:mn13     18:mn01     18:mp02     18:mn03    
+ model     0:n18       0:n18       0:n18       0:p18       0:n18     
+ region        Linear      Cutoff      Cutoff      Linear      Cutoff
+  id        142.3275p     6.8010p     2.6730p   -32.2404a   141.4950p
+  ibs      -1.945e-25  -6.931e-23   -20.7396a     0.        -20.7396a
+  ibd      -6.910e-23    -1.1188a   -20.7396a     0.       -171.8566a
+  vgs         3.6000    -82.9938n   463.5524m    -3.6000    514.4045m
+  vds        89.8068n     1.4904m   463.5524m   -76.6054f   977.9568m
+  vbs         0.        -89.8068n    -3.1364    -76.6054f    -2.6220 
+  vth       336.5712m   336.5713m   889.8912m  -370.0150m   826.8509m
+  vdsat       3.1158     40.2807m    46.1464m    -2.7979     45.6904m
+  vod         3.2634   -336.5714m  -426.3389m    -3.2300   -312.4464m
+  beta      494.9658u     1.3826m     1.4245m   136.6646u     1.4214m
+  gam eff   773.0195m   773.0195m   879.3706m   574.4626m   866.1161m
+  gm          0.        206.9739p    91.9305p     1.5900a     4.7933n
+  gds         1.5938m     4.4672n   104.9411f   420.8637u     5.1142p
+  gmb        23.6432p    67.8193p    11.0881p     6.4410a   629.6202p
+  cdtot     946.0318f    24.8243f    15.8691f   989.9738f    15.8691f
+  cgtot     899.3489f   249.4682f   134.4869f   879.1386f   140.5146f
+  cstot     899.3881f    24.8184f    16.2771f   913.1790f    16.8937f
+  cbtot     296.7206f   267.7040f   135.6470f   285.4616f   142.1541f
+  cgs       447.4509f     7.7997f     7.7513f   439.5618f     7.8193f
+  cgd       445.0434f     7.8289f     7.7440f   461.7667f     7.7440f
+
+
+
+ subckt    xsh.xs2     xsh.xs2     xsh.xs2     xsh.xs2     xsh.xs2   
+ element  18:mp04     18:mn05     18:mn06     18:mn07     18:mp08    
+ model     0:p18       0:n18       0:n18       0:n18       0:p18     
+ region        Linear      Cutoff      Linear      Linear      Linear
+  id       -222.1950p   213.8403p   -72.5468a   137.2291p  -139.8511p
+  ibs       1.129e-25   -20.7396a     0.        -20.7396a   7.104e-26
+  ibd       1.700e-22   -20.7556a     0.        -20.7396a   1.184e-22
+  vgs        -3.6000    577.5487m     3.6000    977.9579m    -2.6220 
+  vds      -528.6514n   577.5489m   -45.5191f   698.0585n  -368.0886n
+  vbs         0.         -3.0225      0.         -2.6220      0.     
+  vth      -370.0150m   876.4282m   336.5712m   826.8508m  -370.0150m
+  vdsat      -2.7979     46.0561m     3.1158    179.5863m    -1.8955 
+  vod        -3.2300   -298.8796m     3.2634    151.1071m    -2.2520 
+  beta      136.6646u     1.4236m   494.9658u     1.3692m   176.0780u
+  gam eff   574.4626m   876.5100m   773.0195m   866.1161m   574.4626m
+  gm         10.9582p     7.2730n     0.        873.8267p    24.5928p
+  gds       420.8636u     8.0739p     1.5938m   196.7234u   380.3947u
+  gmb        44.3902p   882.9010p    12.0514a   112.9197p    33.9624p
+  cdtot     989.9737f    15.8691f   899.3881f   707.5297f   982.4517f
+  cgtot     879.1386f   134.5723f   899.3489f   817.3415f   883.0936f
+  cstot     913.1790f    16.4972f   946.0318f   695.8446f   911.6699f
+  cbtot     285.4616f   135.7588f   296.7206f   153.6645f   285.7288f
+  cgs       439.5618f     7.8473f   445.0434f   404.1647f   445.1889f
+  cgd       461.7667f     7.7441f   447.4509f   379.7127f   458.2228f
+
+
+
+ subckt    xsh.xs2     xsh.xs2     xsh.xs2     xsh.xs2     xsh.xs2   
+ element  18:mn09     18:mn10     18:mn11     18:mn12     18:mn13    
+ model     0:n18       0:n18       0:n18       0:n18       0:n18     
+ region        Cutoff      Cutoff      Cutoff      Cutoff      Cutoff
+  id         66.7493p   128.5675p    68.1487p   130.6363p   5.463e-25
+  ibs       -20.7396a  -1.792e-25   -20.7396a  -1.826e-25   -20.7396a
+  ibd       -27.4782a  -795.4325f    -4.7674f    -1.6643p   -20.7396a
+  vgs       432.7431m    85.9228n   432.7431m    85.9228n  -400.4078m
+  vds       833.1509m     2.6220      1.4107      3.0225    577.5489m
+  vbs        -2.1893      0.         -2.1893      0.         -3.0225 
+  vth       768.6946m   336.5712m   768.6946m   336.5712m   876.4282m
+  vdsat      45.2373m    40.2807m    45.2373m    40.2807m    46.0504m
+  vod      -335.9515m  -336.5712m  -335.9515m  -336.5712m    -1.2768 
+  beta        1.4203m     1.3826m     1.4203m     1.3826m     1.4236m
+  gam eff   854.1914m   773.0195m   854.1914m   773.0195m   876.5100m
+  gm          2.2496n     3.9129n     2.2968n     3.9759n   1.878e-23
+  gds         2.4377p     4.9064p     2.4182p     5.4595p   2.063e-26
+  gmb       325.0348p     1.2689n   331.8519p     1.2892n   2.540e-24
+  cdtot      16.3844f    16.8122f    15.8691f    16.3844f    15.8691f
+  cgtot     148.3425f   249.4376f   148.3425f   249.4376f   148.3092f
+  cstot      17.4087f    24.7878f    17.4087f    24.7878f    16.3844f
+  cbtot     151.0759f   259.8662f   150.5606f   259.4384f   149.5812f
+  cgs         7.7879f     7.8435f     7.7879f     7.8434f     7.7494f
+  cgd         7.7440f     7.7440f     7.7440f     7.7440f     7.7440f
+
+
+
+ subckt    xsh.xs3     xsh.xs3     xsh.xs3     xsh.xs3     xsh.xs3   
+ element  19:mn01     19:mp02     19:mn03     19:mp04     19:mn05    
+ model     0:n18       0:p18       0:n18       0:p18       0:n18     
+ region        Cutoff      Cutoff      Cutoff      Cutoff      Cutoff
+  id          2.6730p    37.1633a     7.1973p    -6.1578p     6.8011p
+  ibs       -20.7396a   5.069e-23   -20.7396a   4.956e-27  -3.732e-23
+  ibd       -20.7396a     0.        -23.1281a   253.2774f    -1.1188a
+  vgs       463.5524m  -586.9140n   437.1079m  -744.4076n    37.5732n
+  vds       463.5524m   157.4936n   900.6603m    -3.5985      1.4904m
+  vbs        -3.1364    157.4936n    -2.6993      0.        -48.3497n
+  vth       889.8912m  -370.0150m   836.7157m  -370.0150m   336.5713m
+  vdsat      46.1464m   -40.0468m    45.7606m   -40.0468m    40.2807m
+  vod      -426.3389m   370.0144m  -399.6078m   370.0142m  -336.5712m
+  beta        1.4245m   298.7068u     1.4218m   298.7068u     1.3826m
+  gam eff   879.3706m   574.4626m   868.1671m   574.4626m   773.0195m
+  gm         91.9305p     1.1724f   245.7582p   194.2567p   206.9754p
+  gds       104.9411f   235.9663p   261.4043f    75.9137f     4.4672n
+  gmb        11.0881p   396.9121a    32.1281p    65.2880p    67.8198p
+  cdtot      15.8691f    28.8212f    15.8691f    18.3663f    24.8243f
+  cgtot     134.4869f   241.3300f   140.4576f   241.2855f   249.4682f
+  cstot      16.2771f    28.9074f    16.7310f    28.7569f    24.8184f
+  cbtot     135.6470f   263.7478f   142.0648f   253.5204f   267.7040f
+  cgs         7.7513f     8.9726f     7.7547f     8.2974f     7.7997f
+  cgd         7.7440f     8.2062f     7.7440f     8.8216f     7.8289f
+
+
+
+ subckt    xsh.xs3     xsh.xs3     xsh.xs3     xsh.xs3     xsh.xs3   
+ element  19:mn06     19:mn07     19:mp08     19:mn09     19:mn10    
+ model     0:n18       0:n18       0:p18       0:n18       0:n18     
+ region        Cutoff      Linear      Cutoff      Cutoff      Linear
+  id         -5.4219a     5.3986p  -2.359e-24   -63.0026p     5.3984p
+  ibs         0.       -2.636e-24   1.371e-27    -9.9675a  -7.376e-27
+  ibd       8.979e-25  -5.250e-24     8.6450a  -3.739e-23  -2.621e-24
+  vgs        85.9228n     3.6000    900.6595m   -17.6075m     3.6000 
+  vds        -1.1637n     3.4065n    -2.6993    -17.6074m     3.4063n
+  vbs         0.         -3.4063n     0.        -17.6075m     0.     
+  vth       336.5712m   336.5713m  -370.0150m   336.5713m   336.5712m
+  vdsat      40.2807m     3.1158    -40.0460m    40.2807m     3.1158 
+  vod      -336.5712m     3.2634      1.2707   -354.1788m     3.2634 
+  beta        1.3826m   494.9657u   298.7068u     1.3826m   494.9658u
+  gam eff   773.0195m   773.0195m   574.4626m   773.0195m   773.0195m
+  gm        165.0040a     0.        7.490e-23     1.9174n     0.     
+  gds         4.6594n     1.5938m   2.773e-26     2.5726n     1.5938m
+  gmb        54.0821a   896.8123f   3.175e-23   626.2157p   896.7807f
+  cdtot      24.8260f   946.0318f    19.3852f    24.7911f   946.0318f
+  cgtot     249.4717f   899.3489f   507.3088f   249.4502f   899.3489f
+  cstot      24.8702f   899.3881f    28.5870f    24.5518f   899.3881f
+  cbtot     267.7176f   296.7206f   519.9781f   267.5618f   296.7206f
+  cgs         7.8444f   447.4509f     8.8379f     7.7658f   447.4509f
+  cgd         7.7888f   445.0434f     8.8216f     7.8386f   445.0434f
+
+
+
+ subckt    xsh.xs3     xsh.xs3     xsh.xs3     xsh.xs4     xsh.xs4   
+ element  19:mn11     19:mn12     19:mn13     20:mn01     20:mp02    
+ model     0:n18       0:n18       0:n18       0:n18       0:p18     
+ region        Cutoff      Linear      Cutoff      Cutoff      Cutoff
+  id         61.2732p    76.6255p     6.8010p     2.6730p    74.8852a
+  ibs        -9.9675a  -1.047e-25  -3.732e-23   -20.7396a   1.022e-22
+  ibd       -31.8818f  -3.720e-23    -1.1188a   -20.7396a     0.     
+  vgs       -17.6075m     3.6000    -41.5369n   463.5524m  -427.0522n
+  vds         1.7824     48.3497n     1.4904m   463.5524m   317.3554n
+  vbs       -17.6075m     0.        -48.3497n    -3.1364    317.3554n
+  vth       341.8783m   336.5712m   336.5713m   889.8912m  -370.0150m
+  vdsat      40.3696m     3.1158     40.2807m    46.1464m   -40.0468m
+  vod      -359.4858m     3.2634   -336.5713m  -426.3389m   370.0146m
+  beta        1.3840m   494.9658u     1.3826m     1.4245m   298.7068u
+  gam eff   773.9491m   773.0195m   773.0195m   879.3706m   574.4626m
+  gm          1.8725n     0.        206.9749p    91.9305p     2.3623f
+  gds         2.1473p     1.5938m     4.4672n   104.9411f   235.9653p
+  gmb       604.6439p    12.7289p    67.8196p    11.0881p   799.7908a
+  cdtot      17.9659f   946.0318f    24.8243f    15.8691f    28.8212f
+  cgtot     249.4066f   899.3489f   249.4682f   134.4869f   241.3300f
+  cstot      24.5766f   899.3881f    24.8184f    16.2771f    28.9074f
+  cbtot     260.8626f   296.7206f   267.7040f   135.6470f   263.7478f
+  cgs         7.8018f   447.4509f     7.7997f     7.7513f     8.9726f
+  cgd         7.7440f   445.0434f     7.8289f     7.7440f     8.2062f
+
+
+
+ subckt    xsh.xs4     xsh.xs4     xsh.xs4     xsh.xs4     xsh.xs4   
+ element  20:mn03     20:mp04     20:mn05     20:mn06     20:mn07    
+ model     0:n18       0:p18       0:n18       0:n18       0:n18     
+ region        Cutoff      Cutoff      Cutoff      Cutoff      Linear
+  id          7.1972p    -6.1578p     6.8011p    -5.4219a     5.3985p
+  ibs       -20.7396a   4.956e-27  -7.367e-23     0.       -2.636e-24
+  ibd       -23.1281a   253.2774f    -1.1188a   8.979e-25  -5.250e-24
+  vgs       437.1078m  -744.4076n    -9.5448n    85.9228n     3.6000 
+  vds       900.6601m    -3.5985      1.4905m    -1.1637n     3.4064n
+  vbs        -2.6993      0.        -95.4676n     0.         -3.4064n
+  vth       836.7157m  -370.0150m   336.5713m   336.5712m   336.5713m
+  vdsat      45.7606m   -40.0468m    40.2807m    40.2807m     3.1158 
+  vod      -399.6080m   370.0142m  -336.5713m  -336.5712m     3.2634 
+  beta        1.4218m   298.7068u     1.3826m     1.3826m   494.9657u
+  gam eff   868.1671m   574.4626m   773.0195m   773.0195m   773.0195m
+  gm        245.7566p   194.2567p   206.9761p   165.0040a     0.     
+  gds       261.4027f    75.9137f     4.4672n     4.6594n     1.5938m
+  gmb        32.1279p    65.2880p    67.8200p    54.0821a   896.7905f
+  cdtot      15.8691f    18.3663f    24.8243f    24.8260f   946.0318f
+  cgtot     140.4576f   241.2855f   249.4682f   249.4717f   899.3489f
+  cstot      16.7310f    28.7569f    24.8184f    24.8702f   899.3881f
+  cbtot     142.0648f   253.5204f   267.7040f   267.7176f   296.7206f
+  cgs         7.7547f     8.2974f     7.7997f     7.8444f   447.4509f
+  cgd         7.7440f     8.8216f     7.8289f     7.7888f   445.0434f
+
+
+
+ subckt    xsh.xs4     xsh.xs4     xsh.xs4     xsh.xs4     xsh.xs4   
+ element  20:mp08     20:mn09     20:mn10     20:mn11     20:mn12    
+ model     0:p18       0:n18       0:n18       0:n18       0:n18     
+ region        Cutoff      Cutoff      Linear      Cutoff      Linear
+  id       -2.359e-24  -134.0938p     5.3986p     0.        151.2989p
+  ibs       1.371e-27    -3.7169p  -7.376e-27   -20.7396a  -2.067e-25
+  ibd         8.6450a  -7.385e-23  -2.621e-24   -20.7396a  -7.346e-23
+  vgs       900.6594m    -3.6000      3.6000     -3.6000      3.6000 
+  vds        -2.6993     -3.6000      3.4064n    -1.8000     95.4676n
+  vbs         0.         -3.6000      0.         -3.6000      0.     
+  vth      -370.0150m   336.5713m   336.5712m   711.4814m   336.5712m
+  vdsat     -40.0460m    40.2807m     3.1158     44.7609m     3.1158 
+  vod         1.2707     -3.9366      3.2634     -4.3115      3.2634 
+  beta      298.7068u     1.3826m   494.9658u     1.4198m   494.9658u
+  gam eff   574.4626m   773.0195m   773.0195m   842.7239m   773.0195m
+  gm        7.490e-23     4.0811n     0.          0.          0.     
+  gds       2.773e-26     6.5724p     1.5938m     0.          1.5938m
+  gmb       3.175e-23     1.3233n   896.8077f     0.         25.1335p
+  cdtot      19.3852f    24.7878f   946.0318f    17.9659f   946.0318f
+  cgtot     507.3086f   249.4376f   899.3489f   249.3751f   899.3489f
+  cstot      28.5870f    15.8691f   899.3881f    15.8691f   899.3881f
+  cbtot     519.9780f   258.9230f   296.7206f   252.2252f   296.7206f
+  cgs         8.8379f     7.7440f   447.4509f     7.7440f   447.4509f
+  cgd         8.8216f     7.8434f   445.0434f     7.7527f   445.0434f
+
+
+
+ subckt    xsh.xs4     xsh.xnp     xsh.xnp     xsh.xnp     xsh.xnp   
+ element  20:mn13     21:m1       21:m2       21:m3       21:m4      
+ model     0:n18      21:p08      21:p08      21:n08      21:n08     
+ region        Cutoff      Linear      Cutoff    Saturati      Linear
+  id          6.8011p   -47.7928u     0.         47.7928u     2.8964p
+  ibs      -7.367e-23     0.          0.          0.          0.     
+  ibd        -1.1188a     6.3849f    19.6112f   -13.2263f  -1.170e-22
+  vgs       -88.6548n    -1.4208    361.5828m   970.1064m   970.1064m
+  vds         1.4905m  -468.3108m    -1.4384    970.1064m     8.5834n
+  vbs       -95.4676n     0.          0.          0.          0.     
+  vth       336.5713m  -697.1376m  -697.1376m   697.4274m   697.4274m
+  vdsat      40.2807m  -468.3108m     0.        272.6791m     8.5834n
+  vod      -336.5714m  -723.6721m     1.0587    272.6791m   272.6791m
+  beta        1.3826m   208.4781u   203.7082u     1.2855m     1.2375m
+  gam eff   773.0195m   570.0000m   570.0000m   400.0000m   400.0000m
+  gm        206.9756p    97.6325u     0.        350.5422u    10.6222p
+  gds         4.4672n    55.5722u     0.          1.8403u   337.4477u
+  gmb        67.8199p    31.1714u     0.         84.0264u     2.5462p
+  cdtot      24.8243f    20.4360f    13.8109f    46.2266f    79.4363f
+  cgtot     249.4682f    11.3613f     7.3304f    23.4078f    32.1284f
+  cstot      24.8184f    27.3220f    21.4822f    83.8135f    79.4363f
+  cbtot     267.7040f    37.8823f    38.8658f   108.6816f   128.7934f
+  cgs         7.7997f     6.8383f   998.5345a    19.9292f    15.5519f
+  cgd         7.8289f     3.7802f   880.3410a     2.4540f    15.5519f
+
+
+
+ subckt    xsh.xnp     xsh.xnp     xsh.xnp     xsh.xnp     xclk.xi2.x
+ element  21:m5       21:m6       21:m7       21:m8       22:mpm2    
+ model    21:p08      21:n08      21:p08      21:p08       0:p18     
+ region      Saturati      Cutoff      Linear    Saturati      Linear
+  id        -47.7928u     0.       -230.8240p   -45.0000u  -316.9951p
+  ibs         0.          0.          0.          0.        1.610e-25
+  ibd        29.4707f   -49.0818f   3.091e-21    11.8148f   4.472e-23
+  vgs      -866.5754m     8.5834n  -866.5754m  -866.5754m    -3.6000 
+  vds        -2.1616      3.6000   -226.6942n  -866.5754m  -139.4208n
+  vbs         0.          0.          0.          0.          0.     
+  vth      -697.1376m   697.4274m  -697.1376m  -697.1376m  -392.1387m
+  vdsat    -169.4378m     0.       -226.6942n  -169.4378m    -2.6066 
+  vod      -169.4378m  -697.4274m  -169.4378m  -169.4378m    -3.2079 
+  beta        3.3294m     5.0626m     6.0094m     3.1349m   783.0146u
+  gam eff   570.0000m   400.0000m   570.0000m   570.0000m   577.8945m
+  gm        564.1332u     0.          1.3623n   531.1682u    15.7173p
+  gds         2.1566u     0.          1.0182m     2.1566u     2.2901m
+  gmb       180.1124u     0.        434.9434p   169.5875u    58.0472p
+  cdtot     145.3126f   118.9207f   651.7799f   185.9028f   218.9383f
+  cgtot     124.9630f    57.6979f   342.7312f   124.7188f   169.4927f
+  cstot     351.5687f   259.1219f   651.7801f   351.5687f   191.5514f
+  cbtot     380.5072f   392.1181f   976.6458f   421.3416f    83.1061f
+  cgs       107.2809f    11.8968f   167.4114f   107.2809f    84.7521f
+  cgd        13.3877f     9.9144f   167.4113f    13.1434f    88.5747f
+
+
+
+ subckt    xclk.xi2.x  xclk.xi2.x  xclk.xi2.x  xclk.xi2.x  xclk.xi2.x
+ element  22:mnm1     23:mpm2     23:mnm1     24:mpm2     24:mnm1    
+ model     0:n18       0:p18       0:n18       0:p18       0:n18     
+ region        Cutoff      Cutoff      Linear      Linear      Cutoff
+  id        300.8466p   -26.0432p    34.3443p  -316.9946p   300.8459p
+  ibs      -2.200e-25   1.506e-26  -2.481e-26   1.610e-25  -2.200e-25
+  ibd        -8.9488p     1.1013p  -3.185e-24   4.472e-23    -8.9488p
+  vgs        85.9212n  -139.4208n     3.6000     -3.6000      8.1802n
+  vds         3.6000     -3.6000      8.1802n  -139.4205n     3.6000 
+  vbs         0.          0.          0.          0.          0.     
+  vth       357.8887m  -392.1354m   357.9772m  -392.1387m   357.8887m
+  vdsat      41.2064m   -41.2523m     2.4046     -2.6066     41.2064m
+  vod      -357.8886m   392.1352m     3.2420     -3.2079   -357.8887m
+  beta        3.9359m     1.7106m     1.3964m   783.0146u     3.9359m
+  gam eff   771.9154m   577.8945m   771.9154m   577.8945m   771.9154m
+  gm          9.1057n   807.0545p     0.         15.7173p     9.1057n
+  gds        48.2444p     1.3517p     4.2644m     2.2901m    48.2443p
+  gmb         2.9813n   276.2835p     5.3061p    58.0471p     2.9812n
+  cdtot       7.9408f    18.3570f   103.9750f   218.9383f     7.9408f
+  cgtot      28.9870f    57.5878f    86.4640f   169.4927f    28.9870f
+  cstot      12.3653f    28.5983f    93.2262f   191.5514f    12.3653f
+  cbtot      33.8421f    69.3636f    40.6495f    83.1061f    33.8421f
+  cgs         3.8659f     8.7151f    42.9095f    84.7521f     3.8659f
+  cgd         3.8599f     8.8161f    42.5954f    88.5747f     3.8599f
+
+
+
+ subckt    xclk.xi2.x  xclk.xi2.x  xclk.xi2.x  xclk.xi2.x  xclk.xi2.x
+ element  25:mpm2     25:mnm1     26:mpm2     26:mnm1     27:mpm2    
+ model     0:p18       0:n18       0:p18       0:n18       0:p18     
+ region        Cutoff      Linear      Linear      Cutoff      Cutoff
+  id        -26.0432p    34.3444p  -316.9942p   300.8459p   -26.0432p
+  ibs       1.506e-26  -2.481e-26   1.610e-25  -2.200e-25   1.506e-26
+  ibd         1.1013p  -3.185e-24   4.472e-23    -8.9488p     1.1013p
+  vgs      -139.4205n     3.6000     -3.6000      8.1802n  -139.4204n
+  vds        -3.6000      8.1802n  -139.4204n     3.6000     -3.6000 
+  vbs         0.          0.          0.          0.          0.     
+  vth      -392.1354m   357.9772m  -392.1387m   357.8887m  -392.1354m
+  vdsat     -41.2523m     2.4046     -2.6066     41.2064m   -41.2523m
+  vod       392.1352m     3.2420     -3.2079   -357.8887m   392.1352m
+  beta        1.7106m     1.3964m   783.0146u     3.9359m     1.7106m
+  gam eff   577.8945m   771.9154m   577.8945m   771.9154m   577.8945m
+  gm        807.0545p     0.         15.7173p     9.1057n   807.0545p
+  gds         1.3517p     4.2644m     2.2901m    48.2443p     1.3517p
+  gmb       276.2835p     5.3061p    58.0471p     2.9812n   276.2835p
+  cdtot      18.3570f   103.9750f   218.9383f     7.9408f    18.3570f
+  cgtot      57.5878f    86.4640f   169.4927f    28.9870f    57.5878f
+  cstot      28.5983f    93.2262f   191.5514f    12.3653f    28.5983f
+  cbtot      69.3636f    40.6495f    83.1061f    33.8421f    69.3636f
+  cgs         8.7151f    42.9095f    84.7521f     3.8659f     8.7151f
+  cgd         8.8161f    42.5954f    88.5747f     3.8599f     8.8161f
+
+
+
+ subckt    xclk.xi2.x  xclk.xi2.x  xclk.xi2.x  xclk.xi4.x  xclk.xi4.x
+ element  27:mnm1     28:mpm2     28:mnm1     29:mpm2     29:mnm1    
+ model     0:n18       0:p18       0:n18       0:p18       0:n18     
+ region        Linear      Linear      Cutoff      Cutoff      Linear
+  id         34.3444p  -316.9942p   300.8459p   -26.0437p    34.3449p
+  ibs      -2.481e-26   1.610e-25  -2.200e-25   1.506e-26  -2.481e-26
+  ibd      -3.185e-24   4.472e-23    -8.9488p     1.1013p  -3.185e-24
+  vgs         3.6000     -3.6000      8.1802n  -744.4130n     3.6000 
+  vds         8.1802n  -139.4204n     3.6000     -3.6000      8.1803n
+  vbs         0.          0.          0.          0.          0.     
+  vth       357.9772m  -392.1387m   357.8887m  -392.1354m   357.9772m
+  vdsat       2.4046     -2.6066     41.2064m   -41.2523m     2.4046 
+  vod         3.2420     -3.2079   -357.8887m   392.1346m     3.2420 
+  beta        1.3964m   783.0146u     3.9359m     1.7106m     1.3964m
+  gam eff   771.9154m   577.8945m   771.9154m   577.8945m   771.9154m
+  gm          0.         15.7173p     9.1057n   807.0696p     0.     
+  gds         4.2644m     2.2901m    48.2443p     1.3517p     4.2644m
+  gmb         5.3061p    58.0471p     2.9812n   276.2887p     5.3062p
+  cdtot     103.9750f   218.9383f     7.9408f    18.3570f   103.9750f
+  cgtot      86.4640f   169.4927f    28.9870f    57.5878f    86.4640f
+  cstot      93.2262f   191.5514f    12.3653f    28.5983f    93.2262f
+  cbtot      40.6495f    83.1061f    33.8421f    69.3636f    40.6495f
+  cgs        42.9095f    84.7521f     3.8659f     8.7151f    42.9095f
+  cgd        42.5954f    88.5747f     3.8599f     8.8161f    42.5954f
+
+
+
+ subckt    xclk.xi4.x  xclk.xi4.x  xclk.xi4.x  xclk.xi4.x  xclk.xi4.x
+ element  30:mpm2     30:mnm1     31:mpm2     31:mnm1     32:mpm2    
+ model     0:p18       0:n18       0:p18       0:n18       0:p18     
+ region        Linear      Cutoff      Cutoff      Linear      Linear
+  id       -316.9943p   300.8459p   -26.0432p    34.3444p  -316.9942p
+  ibs       1.610e-25  -2.200e-25   1.506e-26  -2.481e-26   1.610e-25
+  ibd       4.472e-23    -8.9488p     1.1013p  -3.185e-24   4.472e-23
+  vgs        -3.6000      8.1803n  -139.4204n     3.6000     -3.6000 
+  vds      -139.4204n     3.6000     -3.6000      8.1802n  -139.4204n
+  vbs         0.          0.          0.          0.          0.     
+  vth      -392.1387m   357.8887m  -392.1354m   357.9772m  -392.1387m
+  vdsat      -2.6066     41.2064m   -41.2523m     2.4046     -2.6066 
+  vod        -3.2079   -357.8887m   392.1352m     3.2420     -3.2079 
+  beta      783.0146u     3.9359m     1.7106m     1.3964m   783.0146u
+  gam eff   577.8945m   771.9154m   577.8945m   771.9154m   577.8945m
+  gm         15.7173p     9.1057n   807.0545p     0.         15.7173p
+  gds         2.2901m    48.2443p     1.3517p     4.2644m     2.2901m
+  gmb        58.0471p     2.9812n   276.2835p     5.3061p    58.0471p
+  cdtot     218.9383f     7.9408f    18.3570f   103.9750f   218.9383f
+  cgtot     169.4927f    28.9870f    57.5878f    86.4640f   169.4927f
+  cstot     191.5514f    12.3653f    28.5983f    93.2262f   191.5514f
+  cbtot      83.1061f    33.8421f    69.3636f    40.6495f    83.1061f
+  cgs        84.7521f     3.8659f     8.7151f    42.9095f    84.7521f
+  cgd        88.5747f     3.8599f     8.8161f    42.5954f    88.5747f
+
+
+
+ subckt    xclk.xi4.x  xclk.xi4.x  xclk.xi4.x  xclk.xi4.x  xclk.xi4.x
+ element  32:mnm1     33:mpm2     33:mnm1     34:mpm2     34:mnm1    
+ model     0:n18       0:p18       0:n18       0:p18       0:n18     
+ region        Cutoff      Cutoff      Linear      Linear      Cutoff
+  id        300.8459p   -26.0432p    34.3445p  -316.9942p   300.8459p
+  ibs      -2.200e-25   1.506e-26  -2.481e-26   1.610e-25  -2.200e-25
+  ibd        -8.9488p     1.1013p  -3.185e-24   4.472e-23    -8.9488p
+  vgs         8.1802n  -139.4204n     3.6000     -3.6000      8.1802n
+  vds         3.6000     -3.6000      8.1802n  -139.4204n     3.6000 
+  vbs         0.          0.          0.          0.          0.     
+  vth       357.8887m  -392.1354m   357.9772m  -392.1387m   357.8887m
+  vdsat      41.2064m   -41.2523m     2.4046     -2.6066     41.2064m
+  vod      -357.8887m   392.1352m     3.2420     -3.2079   -357.8887m
+  beta        3.9359m     1.7106m     1.3964m   783.0146u     3.9359m
+  gam eff   771.9154m   577.8945m   771.9154m   577.8945m   771.9154m
+  gm          9.1057n   807.0545p     0.         15.7173p     9.1057n
+  gds        48.2443p     1.3517p     4.2644m     2.2901m    48.2443p
+  gmb         2.9812n   276.2835p     5.3061p    58.0471p     2.9812n
+  cdtot       7.9408f    18.3570f   103.9750f   218.9383f     7.9408f
+  cgtot      28.9870f    57.5878f    86.4640f   169.4927f    28.9870f
+  cstot      12.3653f    28.5983f    93.2262f   191.5514f    12.3653f
+  cbtot      33.8421f    69.3636f    40.6495f    83.1061f    33.8421f
+  cgs         3.8659f     8.7151f    42.9095f    84.7521f     3.8659f
+  cgd         3.8599f     8.8161f    42.5954f    88.5747f     3.8599f
+
+
+
+ subckt    xclk.xi4.x  xclk.xi4.x  xclk.xb1.x  xclk.xb1.x  xclk.xb1.x
+ element  35:mpm2     35:mnm1     36:mpm2     36:mnm1     37:mpm2    
+ model     0:p18       0:n18       0:p18       0:n18       0:p18     
+ region        Cutoff      Linear      Linear      Cutoff      Cutoff
+  id        -26.0432p    34.3444p    -1.9171n     1.8381n  -315.0011p
+  ibs       1.506e-26  -2.481e-26   2.486e-25  -3.933e-25   4.131e-26
+  ibd         1.1013p  -3.185e-24   5.083e-23   -71.7262p    16.7423p
+  vgs      -139.4204n     3.6000     -3.6000     85.9212n  -744.4075n
+  vds        -3.6000      8.1802n  -744.4075n     3.6000     -3.6000 
+  vbs         0.          0.          0.          0.          0.     
+  vth      -392.1354m   357.9772m  -459.1981m   365.8435m  -397.3947m
+  vdsat     -41.2523m     2.4046     -2.0438     42.4474m   -45.3381m
+  vod       392.1352m     3.2420     -3.1408   -365.8434m   397.3940m
+  beta        1.7106m     1.3964m     1.2382m     4.8301m     2.7178m
+  gam eff   577.8945m   771.9154m   608.2173m   766.6028m   608.2173m
+  gm        807.0545p     0.         90.2014p    52.7106n     8.3867n
+  gds         1.3517p     4.2644m     2.6006m     1.8360n   193.1881p
+  gmb       276.2835p     5.3061p   156.9068p    12.1824n     2.6370n
+  cdtot      18.3570f   103.9750f    12.7297f     1.6082f     3.6596f
+  cgtot      57.5878f    86.4640f     7.7482f     2.3701f     4.6727f
+  cstot      28.5983f    93.2262f    10.8987f     2.5314f     5.7275f
+  cbtot      69.3636f    40.6495f     9.2736f     3.4693f     7.1366f
+  cgs         8.7151f    42.9095f     3.8670f   760.2248a     1.7285f
+  cgd         8.8161f    42.5954f     3.9103f   759.9589a     1.7311f
+
+
+
+ subckt    xclk.xb1.x  xclk.xb2.x  xclk.xb2.x  xclk.xb2.x  xclk.xb2.x
+ element  37:mnm1     38:mpm2     38:mnm1     39:mpm2     39:mnm1    
+ model     0:n18       0:p18       0:n18       0:p18       0:n18     
+ region        Linear      Linear      Cutoff      Cutoff      Linear
+  id        338.9434p    -1.9171n     1.8382n  -315.0011p   338.9434p
+  ibs      -7.238e-26   2.486e-25  -3.933e-25   4.131e-26  -7.238e-26
+  ibd      -7.572e-24   5.083e-23   -71.7267p    16.7423p  -7.572e-24
+  vgs         3.6000     -3.6000    343.6852n  -744.4130n     3.6000 
+  vds        85.9228n  -744.4130n     3.6000     -3.6000     85.9228n
+  vbs         0.          0.          0.          0.          0.     
+  vth       419.0454m  -459.1981m   365.8435m  -397.3947m   419.0454m
+  vdsat       1.2614     -2.0438     42.4474m   -45.3381m     1.2614 
+  vod         3.1810     -3.1408   -365.8432m   397.3940m     3.1810 
+  beta        1.6943m     1.2382m     4.8301m     2.7178m     1.6943m
+  gam eff   766.6028m   608.2173m   766.6028m   608.2173m   766.6028m
+  gm          0.         90.2021p    52.7110n     8.3867n     0.     
+  gds         4.0209m     2.6006m     1.8360n   193.1881p     4.0209m
+  gmb        26.4584p   156.9080p    12.1825n     2.6370n    26.4584p
+  cdtot       6.5130f    12.7297f     1.6082f     3.6596f     6.5130f
+  cgtot       4.3343f     7.7482f     2.3701f     4.6727f     4.3343f
+  cstot       5.5557f    10.8987f     2.5314f     5.7275f     5.5557f
+  cbtot       4.4270f     9.2736f     3.4693f     7.1366f     4.4270f
+  cgs         2.0478f     3.8670f   760.2248a     1.7285f     2.0478f
+  cgd         2.0610f     3.9103f   759.9589a     1.7311f     2.0610f
+
+
+
+ subckt    xclk.xb3.x  xclk.xb3.x  xclk.xb3.x  xclk.xb3.x  xclk.xb4.x
+ element  40:mpm2     40:mnm1     41:mpm2     41:mnm1     42:mpm2    
+ model     0:p18       0:n18       0:p18       0:n18       0:p18     
+ region        Cutoff      Linear      Linear      Cutoff      Cutoff
+  id       -315.0011p   338.9435p    -1.9171n     1.8381n  -314.9951p
+  ibs       4.131e-26  -7.238e-26   2.486e-25  -3.933e-25   4.131e-26
+  ibd        16.7423p  -7.572e-24   5.083e-23   -71.7262p    16.7420p
+  vgs      -744.4130n     3.6000     -3.6000     85.9228n   -23.4460n
+  vds        -3.6000     85.9228n  -744.4075n     3.6000     -3.6000 
+  vbs         0.          0.          0.          0.          0.     
+  vth      -397.3947m   419.0454m  -459.1981m   365.8435m  -397.3947m
+  vdsat     -45.3381m     1.2614     -2.0438     42.4474m   -45.3381m
+  vod       397.3940m     3.1810     -3.1408   -365.8434m   397.3947m
+  beta        2.7178m     1.6943m     1.2382m     4.8301m     2.7178m
+  gam eff   608.2173m   766.6028m   608.2173m   766.6028m   608.2173m
+  gm          8.3867n     0.         90.2014p    52.7106n     8.3865n
+  gds       193.1881p     4.0209m     2.6006m     1.8360n   193.1844p
+  gmb         2.6370n    26.4585p   156.9068p    12.1824n     2.6369n
+  cdtot       3.6596f     6.5130f    12.7297f     1.6082f     3.6596f
+  cgtot       4.6727f     4.3343f     7.7482f     2.3701f     4.6727f
+  cstot       5.7275f     5.5557f    10.8987f     2.5314f     5.7275f
+  cbtot       7.1366f     4.4270f     9.2736f     3.4693f     7.1366f
+  cgs         1.7285f     2.0478f     3.8670f   760.2248a     1.7285f
+  cgd         1.7311f     2.0610f     3.9103f   759.9589a     1.7311f
+
+
+
+ subckt    xclk.xb4.x  xclk.xb4.x  xclk.xb4.x  xsh.xs1.xi  xsh.xs1.xi
+ element  42:mnm1     43:mpm2     43:mnm1     44:mpm2     44:mnm1    
+ model     0:n18       0:p18       0:n18       0:p18       0:n18     
+ region        Linear      Linear      Cutoff      Linear      Cutoff
+  id        338.9370p    -1.9171n     1.8381n    -1.9171n     1.8381n
+  ibs      -7.238e-26   2.486e-25  -3.933e-25   2.486e-25  -3.933e-25
+  ibd      -7.572e-24   5.083e-23   -71.7262p   5.083e-23   -71.7262p
+  vgs         3.6000     -3.6000     85.9212n    -3.6000     85.9228n
+  vds        85.9212n  -744.4075n     3.6000   -744.4076n     3.6000 
+  vbs         0.          0.          0.          0.          0.     
+  vth       419.0454m  -459.1981m   365.8435m  -459.1981m   365.8435m
+  vdsat       1.2614     -2.0438     42.4474m    -2.0438     42.4474m
+  vod         3.1810     -3.1408   -365.8434m    -3.1408   -365.8434m
+  beta        1.6943m     1.2382m     4.8301m     1.2382m     4.8301m
+  gam eff   766.6028m   608.2173m   766.6028m   608.2173m   766.6028m
+  gm          0.         90.2014p    52.7106n    90.2014p    52.7106n
+  gds         4.0209m     2.6006m     1.8360n     2.6006m     1.8360n
+  gmb        26.4579p   156.9068p    12.1824n   156.9068p    12.1824n
+  cdtot       6.5130f    12.7297f     1.6082f    12.7297f     1.6082f
+  cgtot       4.3343f     7.7482f     2.3701f     7.7482f     2.3701f
+  cstot       5.5557f    10.8987f     2.5314f    10.8987f     2.5314f
+  cbtot       4.4270f     9.2736f     3.4693f     9.2736f     3.4693f
+  cgs         2.0478f     3.8670f   760.2248a     3.8670f   760.2248a
+  cgd         2.0610f     3.9103f   759.9589a     3.9103f   759.9589a
+
+
+
+ subckt    xsh.xs1.xi  xsh.xs1.xi  xsh.xs2.xi  xsh.xs2.xi  xsh.xs2.xi
+ element  45:mpm2     45:mnm1     46:mpm2     46:mnm1     47:mpm2    
+ model     0:p18       0:n18       0:p18       0:n18       0:p18     
+ region        Linear      Cutoff      Cutoff      Linear      Cutoff
+  id         -2.0005n     1.9184n  -315.0011p   338.9435p  -314.9993p
+  ibs       2.594e-25  -4.105e-25   4.131e-26  -7.238e-26   4.131e-26
+  ibd       5.305e-23   -74.8579p    16.7423p  -7.572e-24    16.7422p
+  vgs        -3.5985      1.4905m  -744.4075n     3.6000   -528.6514n
+  vds      -776.8420n     3.6000     -3.6000     85.9228n    -3.6000 
+  vbs         0.          0.          0.          0.          0.     
+  vth      -459.1981m   365.8435m  -397.3947m   419.0454m  -397.3947m
+  vdsat      -2.0429     42.4475m   -45.3381m     1.2614    -45.3381m
+  vod        -3.1393   -364.3530m   397.3940m     3.1810    397.3942m
+  beta        1.2386m     4.8301m     2.7178m     1.6943m     2.7178m
+  gam eff   608.2173m   766.6028m   608.2173m   766.6028m   608.2173m
+  gm         94.3087p    55.0018n     8.3867n     0.          8.3866n
+  gds         2.6004m     1.9158n   193.1881p     4.0209m   193.1870p
+  gmb       163.8231p    12.7015n     2.6370n    26.4585p     2.6370n
+  cdtot      12.7296f     1.6082f     3.6596f     6.5130f     3.6596f
+  cgtot       7.7482f     2.3696f     4.6727f     4.3343f     4.6727f
+  cstot      10.8987f     2.5314f     5.7275f     5.5557f     5.7275f
+  cbtot       9.2736f     3.4688f     7.1366f     4.4270f     7.1366f
+  cgs         3.8670f   760.2336a     1.7285f     2.0478f     1.7285f
+  cgd         3.9103f   759.9588a     1.7311f     2.0610f     1.7311f
+
+
+
+ subckt    xsh.xs2.xi  xsh.xs3.xi  xsh.xs3.xi  xsh.xs3.xi  xsh.xs3.xi
+ element  47:mnm1     48:mpm2     48:mnm1     49:mpm2     49:mnm1    
+ model     0:n18       0:p18       0:n18       0:p18       0:n18     
+ region        Linear      Linear      Cutoff      Linear      Cutoff
+  id        338.9416p    -1.9171n     1.8381n    -2.0005n     1.9184n
+  ibs      -7.238e-26   2.486e-25  -3.933e-25   2.594e-25  -4.105e-25
+  ibd      -7.572e-24   5.083e-23   -71.7262p   5.305e-23   -74.8578p
+  vgs         3.6000     -3.6000     85.9228n    -3.5985      1.4905m
+  vds        85.9223n  -744.4076n     3.6000   -776.8411n     3.6000 
+  vbs         0.          0.          0.          0.          0.     
+  vth       419.0454m  -459.1981m   365.8435m  -459.1981m   365.8435m
+  vdsat       1.2614     -2.0438     42.4474m    -2.0429     42.4475m
+  vod         3.1810     -3.1408   -365.8434m    -3.1393   -364.3530m
+  beta        1.6943m     1.2382m     4.8301m     1.2386m     4.8301m
+  gam eff   766.6028m   608.2173m   766.6028m   608.2173m   766.6028m
+  gm          0.         90.2014p    52.7106n    94.3086p    55.0018n
+  gds         4.0209m     2.6006m     1.8360n     2.6004m     1.9158n
+  gmb        26.4583p   156.9068p    12.1824n   163.8229p    12.7015n
+  cdtot       6.5130f    12.7297f     1.6082f    12.7296f     1.6082f
+  cgtot       4.3343f     7.7482f     2.3701f     7.7482f     2.3696f
+  cstot       5.5557f    10.8987f     2.5314f    10.8987f     2.5314f
+  cbtot       4.4270f     9.2736f     3.4693f     9.2736f     3.4688f
+  cgs         2.0478f     3.8670f   760.2248a     3.8670f   760.2336a
+  cgd         2.0610f     3.9103f   759.9589a     3.9103f   759.9588a
+
+
+
+ subckt    xsh.xs4.xi  xsh.xs4.xi  xsh.xs4.xi  xsh.xs4.xi
+ element  50:mpm2     50:mnm1     51:mpm2     51:mnm1    
+ model     0:p18       0:n18       0:p18       0:n18     
+ region        Linear      Cutoff      Linear      Cutoff
+  id         -1.9171n     1.8381n    -2.0005n     1.9184n
+  ibs       2.486e-25  -3.933e-25   2.594e-25  -4.105e-25
+  ibd       5.083e-23   -71.7262p   5.305e-23   -74.8579p
+  vgs        -3.6000     85.9228n    -3.5985      1.4906m
+  vds      -744.4076n     3.6000   -776.8424n     3.6000 
+  vbs         0.          0.          0.          0.     
+  vth      -459.1981m   365.8435m  -459.1981m   365.8435m
+  vdsat      -2.0438     42.4474m    -2.0429     42.4475m
+  vod        -3.1408   -365.8434m    -3.1393   -364.3530m
+  beta        1.2382m     4.8301m     1.2386m     4.8301m
+  gam eff   608.2173m   766.6028m   608.2173m   766.6028m
+  gm         90.2014p    52.7106n    94.3088p    55.0019n
+  gds         2.6006m     1.8360n     2.6004m     1.9158n
+  gmb       156.9068p    12.1824n   163.8232p    12.7015n
+  cdtot      12.7297f     1.6082f    12.7296f     1.6082f
+  cgtot       7.7482f     2.3701f     7.7482f     2.3696f
+  cstot      10.8987f     2.5314f    10.8987f     2.5314f
+  cbtot       9.2736f     3.4693f     9.2736f     3.4688f
+  cgs         3.8670f   760.2248a     3.8670f   760.2336a
+  cgd         3.9103f   759.9589a     3.9103f   759.9588a
+
+
+
+ ******  
+ bandgap
+
+  ******  transient analysis tnom=  25.000 temp=  27.000 *****
+   powerall=  8.3474E-03  from=  0.0000E+00     to=  2.0000E-05
+
+          ***** job concluded
+1****** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******                   
+ ******  
+ bandgap
+
+  ******  job statistics summary tnom=  25.000 temp=  27.000 *****
+
+  ******  HSPICE Threads Information  ******
+
+  Command Line Threads Count :     1
+  Available CPU Count        :     8
+  Actual Threads Count       :     1
+
+
+  ******  Circuit Statistics  ******
+  # nodes       =     358 # elements   =     160
+  # resistors   =       0 # capacitors =      11 # inductors   =       0
+  # mutual_inds =       0 # vccs       =       0 # vcvs        =       0
+  # cccs        =       0 # ccvs       =       0 # volt_srcs   =       4
+  # curr_srcs   =       1 # diodes     =       0 # bjts        =       0
+  # jfets       =       0 # mosfets    =     144 # U elements  =       0
+  # T elements  =       0 # W elements =       0 # B elements  =       0
+  # S elements  =       0 # P elements =       0 # va device   =       0
+  # vector_srcs =       0
+
+
+  ******  Runtime Statistics (seconds)  ******
+
+  analysis           time    # points   tot. iter  conv.iter
+  op point           0.05           1          30
+  transient          6.64      200001       59363       21167 rev=      2190
+  readin             0.09
+  errchk             0.02
+  setup              0.04
+  output             0.00
+
+
+           peak memory used         59.88 megabytes
+           total cpu time            6.87 seconds
+           total elapsed time        7.66 seconds
+           job started at     18:30:05 01/07/2021
+           job ended   at     18:30:13 01/07/2021
+
+
+  lic: Release hspice token(s) 
