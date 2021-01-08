@@ -75,22 +75,22 @@ RA22 in2 0 100k
 
 .SUBCKT subDAC vref vIref vdd vss vin out1 out2 out3 out4 out5 out6 out
 
-*开关电路决定电源开断
-xs1 vref vIref out1 vref ina / BOOSTRAP
-xs2 vref vIref out2 vref inb / BOOSTRAP
-xs3 vref vIref out3 vref inc / BOOSTRAP
-xs4 vref vIref out4 vref ind / BOOSTRAP
-xs5 vref vIref out5 vref ine / BOOSTRAP
-xs6 vref vIref out6 vref inf / BOOSTRAP
+*开关电路决定电源高低
+xs1 vdd vss out1 vref ina / BOOSTRAP
+xs2 vdd vss out2 vref inb / BOOSTRAP
+xs3 vdd vss out3 vref inc / BOOSTRAP
+xs4 vdd vss out4 vref ind / BOOSTRAP
+xs5 vdd vss out5 vref ine / BOOSTRAP
+xs6 vdd vss out6 vref inf / BOOSTRAP
 
-R1 Vn ina 2m
-R2 Vn inb 2m
-R3 Vn inc 2m
-R4 Vn ind 2m
-R5 Vn ine 2m
-R6 Vn inf 2m
+R1 Vn ina 2k
+R2 Vn inb 2k
+R3 Vn inc 2k
+R4 Vn ind 2k
+R5 Vn ine 2k
+R6 Vn inf 2k
 
-Rno Vn out 1m
+Rno Vn out 1k
 
 XI vin Vn out vdd vss / OPAMP
 

@@ -1,0 +1,43 @@
+* "simulator" "HSPICE" 
+* "version" "F-2011.09 32-BIT"
+* "format" "HSP"
+* "rundate" "22:10:35 01/08/2021 "
+* "netlist" "SHsim.sp "
+* "runtitle" "bandgap"
+* time =    0.            
+* temperature =   27.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ clkin =  -1.8000        
++ out =-900.0303m       
++ shout =-900.0303m       
++ vddh =   3.3000        
++ vddl =   1.8000        
++ vin =   0.            
++ viref =  -1.6000        
++ vref =   1.6000        
++ vssh =  -3.3000        
++ vssl =  -1.8000        
++ xs0.iclk =   1.8000        
++ xs0.inetd4 =   1.8000        
++ xs0.netd4 =  -1.7985        
++ xs0.netd6 =  -1.8000        
++ xs0.netd7 =  -1.8000        
++ xs0.nets1 =   1.3364        
++ xs0.nets2 =   1.8000        
++ xs0.nets3 = 899.3398m       
++ xs0.nets5 =  -1.8000        
++ xs0.nets7 =  -1.8000        
++ xsh.xs0.iclk =   1.8000        
++ xsh.xs0.inetd4 =   1.8000        
++ xsh.xs0.netd4 =  -1.7985        
++ xsh.xs0.netd6 =  -1.8000        
++ xsh.xs0.netd7 =  -1.8000        
++ xsh.xs0.nets1 =   1.3364        
++ xsh.xs0.nets2 =   1.8000        
++ xsh.xs0.nets3 = 899.3396m       
++ xsh.xs0.nets5 =  -1.8000        
++ xsh.xs0.nets7 =  -1.8000        
+***   END: Saved Operating Point ***                     

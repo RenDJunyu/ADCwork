@@ -1,0 +1,58 @@
+***** HSPICE -- F-2011.09 32-BIT (Sep  5 2011) winnt ******
+ Input File: SHsim.sp
+ lic:
+ lic: FLEXlm: v10.8
+ lic: USER:   86184                HOSTNAME: PC2line
+ lic: HOSTID: "e86a64c8f38a 00ff6e5bbc8f 485f9955e58d 4a5f9955e58d ca5f9955e58d"
+ lic: Using FLEXlm license file:
+ lic: D:\HSPICE\license1.dat
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 31-dec-2030/2030.12
+ lic: NODE LOCKED license on hostid "e86a64c8f38a 00ff6e5bbc8f 485f9955e58d 4a5f
+ lic:
+ init: begin read circuit files,  cpu clock=  8.40E-01
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option search   = D:\HSPICE\hspice\PARTS\XILINX\
+       option search   = D:\HSPICE\hspice\PARTS\TLINE\
+       option search   = D:\HSPICE\hspice\PARTS\TI\
+       option search   = D:\HSPICE\hspice\PARTS\SIGNET\
+       option search   = D:\HSPICE\hspice\PARTS\PCI\
+       option search   = D:\HSPICE\hspice\PARTS\LIN_TECH\
+       option search   = D:\HSPICE\hspice\PARTS\FET\
+       option search   = D:\HSPICE\hspice\PARTS\DIO\
+       option search   = D:\HSPICE\hspice\PARTS\COMLINE\
+       option search   = D:\HSPICE\hspice\PARTS\BURR_BRN\
+       option search   = D:\HSPICE\hspice\PARTS\BJT\
+       option search   = D:\HSPICE\hspice\PARTS\behave\
+       option search   = D:\HSPICE\hspice\PARTS\AD\
+       option post     =     2.00
+       option runlvl
+       option post
+       option accura
+       option probe
+ init: end read circuit files,  cpu clock=  9.00E-01 memory=    288 kb
+ init: begin check errors,  cpu clock=  9.00E-01
+ init: end check errors,  cpu clock=  9.10E-01 memory=    421 kb
+ init: begin setup matrix, pivot=     0 cpu clock=  9.10E-01
+       establish matrix -- done,  cpu clock=  9.21E-01 memory=    456 kb
+       re-order matrix -- done,  cpu clock=  9.24E-01 memory=    468 kb
+ init: end setup matrix,  cpu clock=  9.28E-01 memory=    521 kb
+ dcop: begin dcop,  cpu clock=  9.32E-01
+ dcop: end dcop,  cpu clock=  9.37E-01 memory=    521 kb  tot_iter=      26
+ output: SHsim.mt0
+ sweep: tran tran0    begin, stop_t=  5.00E-05 #sweeps=**** cpu clock=  9.44E-01
+ tran: time= 5.0001E-06 tot_iter=    3163 conv_iter=    1051 cpu clock= 1.07E+00
+ tran: time= 1.0000E-05 tot_iter=    6420 conv_iter=    2136 cpu clock= 1.21E+00
+ tran: time= 1.5000E-05 tot_iter=    9513 conv_iter=    3170 cpu clock= 1.33E+00
+ tran: time= 2.0000E-05 tot_iter=   12430 conv_iter=    4137 cpu clock= 1.45E+00
+ tran: time= 2.5000E-05 tot_iter=   15417 conv_iter=    5132 cpu clock= 1.57E+00
+ tran: time= 3.0000E-05 tot_iter=   18483 conv_iter=    6152 cpu clock= 1.70E+00
+ tran: time= 3.5000E-05 tot_iter=   21739 conv_iter=    7233 cpu clock= 1.83E+00
+ tran: time= 4.0000E-05 tot_iter=   24973 conv_iter=    8308 cpu clock= 1.96E+00
+ tran: time= 4.5000E-05 tot_iter=   27940 conv_iter=    9286 cpu clock= 2.09E+00
+ tran: time= 5.0000E-05 tot_iter=   31031 conv_iter=   10320 cpu clock= 2.21E+00
+ sweep: tran tran0    end,  cpu clock=  2.22E+00 memory=    524 kb
+>info:         ***** hspice job concluded
+ lic: Release hspice token(s)

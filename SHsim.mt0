@@ -1,0 +1,4 @@
+$DATA1 SOURCE='HSPICE' VERSION='F-2011.09 32-BIT'
+.TITLE 'bandgap'
+ powerall         temper           alter#            
+  3.431e-03         27.0000        1                 
