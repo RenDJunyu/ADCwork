@@ -19,3 +19,5 @@
     misc.cdl 逻辑电路
     OTA.cdl 运放(10MOS、33MOS)
     SHmodel.cdl 采样保持电路
+    subADAC.cdl subADC和subDAC
+        subDAC尚未完成
