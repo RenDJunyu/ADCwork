@@ -3,42 +3,11 @@
 .inc 'models/Bandgap.cdl'
 .inc 'models/OTA.cdl'
 .inc 'models/comparator.cdl'
+.inc 'models/subADAC.cdl'
 
 $1.61V和-1.6V带隙基准电压源
 xr1 gnda vddh vssh vref vIref Bandgapb 
-
-* 分压电路
-R1 pot1 vIref 300k
-R2 pot2 pot1 200k
-R3 pot3 pot2 200k
-R4 pot4 pot3 200k
-R5 pot5 pot4 200k
-R6 pot6 pot5 200k
-R7 vref pot6 300k
-*R8 vref pot7 5k
-
-* 比较电路
-xc1 Iin clk vssl out1 vddl pot1 vip comparator_preamp $-1.0V
-xc2 Iin clk vssl out2 vddl pot2 vip comparator_preamp $-0.6V
-xc3 Iin clk vssl out3 vddl pot3 vip comparator_preamp $-0.2V
-xc4 Iin clk vssl out4 vddl pot4 vip comparator_preamp $0.2V
-xc5 Iin clk vssl out5 vddl pot5 vip comparator_preamp $0.6V
-xc6 Iin clk vssl out6 vddl pot6 vip comparator_preamp $1.0V
-
-$ 滤波电路
-c11 pot1 0 10u
-c12 pot2 0 10u
-c13 pot3 0 10u
-c14 pot4 0 10u
-c15 pot5 0 10u
-c16 pot6 0 10u
-
-c21 out1 0 10p
-c22 out2 0 10p
-c23 out3 0 10p
-c24 out4 0 10p
-c25 out5 0 10p
-c26 out6 0 10p
+xsubADC vref vIref clk vddl vssl vip out1 out2 out3 out4 out5 out6 / subADC
 
 $ Encoder
 

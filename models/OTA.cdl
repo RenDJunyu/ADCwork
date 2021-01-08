@@ -63,8 +63,8 @@ MM0 Idc Idc gnda gnda n33 W=5u L=1u m=1
 * 1 vip
 * 2 vin
 * 6 vout
-* 8 VSS
 * 9 VDD
+* 8 VSS
 M1 4 2 3 3 p08 W=4u L=1u AD=24p AS=24p PD=20u PS=20u
 M2 5 1 3 3 p08 W=4u L=1u AD=24p AS=24p PD=20u PS=20u
 M3 4 4 8 8 n08 W=11u L=1u AD=66p AS=66p PD=34u PS=34u

@@ -4,15 +4,21 @@
 * View Name: schematic
 *****************************************************************************************
 
-.SUBCKT SH gnd vdd vss clkSB clkS clkH vin vout
-xs1 vdd vss clkSB comp vin / BOOSTRAP
-xs2 vdd vss clkH comp vout / BOOSTRAP
-xs3 vdd vss clkS Vy gnd / BOOSTRAP
-xs4 vdd vss clkS vout gnd / BOOSTRAP
-C1 vin Vy 10n
-C2 comp Vy 10n
-Xnp gnd Vy vout vdd vss / OPAMP
+.SUBCKT SH gnd vdd vss clkS clkH vip vout
 
+xs1 vdd gnd clkS vip vC / BOOSTRAP
+xs2 vdd gnd clkH vout vC / BOOSTRAP
+M1 vip clkS vC vss n18 W=20u L=5u m=1
+M2 vC clkH vout vss n18 W=20u L=5u m=1
+C vC Vx 100n
+xA Vx vss vout vdd vss / OPAMP
+
+.ENDS
+
+.SUBCKT LSH vdd vss clkS vip vout
+
+xs0 vdd vss clkS vip vout / BOOSTRAP
+C vout vss 1n
 .ENDS
 
 *****************************************************************************************
@@ -41,4 +47,53 @@ MN13 netd4 netd7 nets5 vss n18 W=20u L=5u m=1
 
 C1 nets1 nets2 10u
 C2 nets3 nets5 10u
+.ENDS
+
+.SUBCKT bootstrap vdd gnd clk vin out
+XI0 vdd gnd clk clkb / inv
+MN1 n3 clkb gnd gnd n18 W=20u L=200n m=1
+MP2 n2 n4 vdd vdd p18 W=20u L=200n m=1
+MP4 n1 clk vdd vdd p18 W=20u L=200n m=1
+MN4 n1 clk n3 gnd n18 W=20u L=200n m=1
+MP1 n4 n1 n2 vdd p18 W=20u L=200n m=1
+MN3 n1 n4 n3 gnd n18 W=20u L=200n m=1
+MN5 n4 vdd n5 gnd n18 W=20u L=200n m=1
+MN7 vin n4 n3 gnd n18 W=20u L=200n m=1
+MP3 vin clkb n3 vdd p18 W=20u L=200n m=1
+MP5 vdd clkb n5 vdd p18 W=20u L=200n m=1
+MN6 n5 clkb gnd gnd n18 W=20u L=200n m=1
+MNS out n4 vin gnd n18 W=20u L=200n m=1
+Cb n2 n3 200f
+.ENDS
+
+.SUBCKT none
+
+xs1 vdd vss clkSB vip C12 / BOOSTRAP
+xs2 vdd vss clkH C12 gnd / BOOSTRAP
+Cs C12 C34 10p
+xs3 vdd vss clkSB C34 gnd / BOOSTRAP
+xs4 vdd vss clkH C34 Vy / BOOSTRAP
+xs5 vdd vss clkS Vy gnd / BOOSTRAP
+xs6 vdd vss clkS C67 gnd / BOOSTRAP
+xs7 vdd vss clkH C67 vout / BOOSTRAP
+Cts Vy C67 10p
+xs8 vdd vss clkS C89 vout / BOOSTRAP
+xs9 vdd vss clkS C89 vout / BOOSTRAP
+xs10 vdd vss clkS C89 gnd / BOOSTRAP
+Cff Vy C89 10p
+xs11 vdd vss clkS vout gnd / BOOSTRAP
+Xnp gnd Vy vout vdd vss / OPAMP
+
+xs11 vdd vss clkS vip vSCH1 / BOOSTRAP
+xs12 vdd vss clkH vSCH1 vout / BOOSTRAP
+xs13 vdd vss clkSB Vx gnd / BOOSTRAP
+xs21 vdd vss clkS gnd vSCH2 / BOOSTRAP
+xs22 vdd vss clkH vSCH2 gnd / BOOSTRAP
+xs23 vdd vss clkSB Vy gnd / BOOSTRAP
+xs4 vdd vss clkS vout gnd / BOOSTRAP
+C1 vSCH1 Vx 10p
+C2 vSCH2 Vy 10p
+Xnp Idc gnd Vy Vx von gnd gnd vdd / OTA
+
+
 .ENDS

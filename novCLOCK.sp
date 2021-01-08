@@ -24,7 +24,7 @@ v2 gnda 0 0
 *         clk2, clk2d
 ******************************************************
 .param ts2=ts/2
-x0 vdda gnda  clkin clk1 clk1d clk2 clk2d / CLOCKa
+x0 vdda gnda  clkin clk1 clk1d clk2 clk2d / CLOCKb
 vclk clkin 0 pulse(0 1.8 1n 1n 1n ts2 ts)
 
 ******************************************************
