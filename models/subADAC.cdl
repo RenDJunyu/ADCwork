@@ -76,22 +76,31 @@ RA22 in2 0 100k
 .SUBCKT subDAC vref vIref vdd vss vin out1 out2 out3 out4 out5 out6 out
 
 *开关电路决定电源高低
-xs1 vdd vss out1 vref ina / BOOSTRAP
-xs2 vdd vss out2 vref inb / BOOSTRAP
-xs3 vdd vss out3 vref inc / BOOSTRAP
-xs4 vdd vss out4 vref ind / BOOSTRAP
-xs5 vdd vss out5 vref ine / BOOSTRAP
-xs6 vdd vss out6 vref inf / BOOSTRAP
+$xs1 vdd vIref out1 vref ina / BOOSTRAP
+$xs2 vdd vIref out2 vref inb / BOOSTRAP
+$xs3 vdd vIref out3 vref inc / BOOSTRAP
+$xs4 vdd vIref out4 vref ind / BOOSTRAP
+$xs5 vdd vIref out5 vref ine / BOOSTRAP
+$xs6 vdd vIref out6 vref inf / BOOSTRAP
 
-R1 Vn ina 2k
-R2 Vn inb 2k
-R3 Vn inc 2k
-R4 Vn ind 2k
-R5 Vn ine 2k
-R6 Vn inf 2k
+R1 VnI out1 120k
+R2 VnI out2 120k
+R3 VnI out3 120k
+R4 VnI out4 120k
+R5 VnI out5 120k
+R6 VnI out6 120k
 
-Rno Vn out 1k
+Rno VnI preout 2k
 
-XI vin Vn out vdd vss / OPAMP
+Ra vin vip 29k
+Rb 0 vip 4k
+Rc 0 VnII 2k
+Rd VnII out 58k
+Roo preout vipII 100k
+
+XI vip VnI preout vdd vss / OPAMP
+XII vipII VnII out vdd vss / OPAMP
 
 .ENDS
+$every put in with 1.6V,1.6V,1.6V,1.6V,1.6V,1.6V
+$-1.6  vvvv

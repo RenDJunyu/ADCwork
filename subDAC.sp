@@ -22,22 +22,20 @@ vvssl vssl 0 -1.8
 vgnd gnd 0 0
 
 vvin vin 0 pwl 0 -1.6,40u 1.6,80u -1.6
-vout1 out1 0 pwl 0 -1.8,7.499u -1.8,7.5u 1.8,72.5u 1.8,72.501u -1.8
-vout2 out2 0 pwl 0 -1.8,12.499u -1.8,12.5u 1.8,67.5u 1.8,67.501u -1.8
-vout3 out3 0 pwl 0 -1.8,17.499u -1.8,17.5u 1.8,62.5u 1.8,62.501u -1.8
-vout4 out4 0 pwl 0 -1.8,22.499u -1.8,22.5u 1.8,57.5u 1.8,57.501u -1.8
-vout5 out5 0 pwl 0 -1.8,27.499u -1.8,27.5u 1.8,52.5u 1.8,52.501u -1.8
-vout6 out6 0 pwl 0 -1.8,32.499u -1.8,32.5u 1.8,47.5u 1.8,47.501u -1.8
+vout1 out1 0 pwl 0 -1.6,7.499u -1.6,7.5u 1.6,72.5u 1.6,72.501u -1.6
+vout2 out2 0 pwl 0 -1.6,12.499u -1.6,12.5u 1.6,67.5u 1.6,67.501u -1.6
+vout3 out3 0 pwl 0 -1.6,17.499u -1.6,17.5u 1.6,62.5u 1.6,62.501u -1.6
+vout4 out4 0 pwl 0 -1.6,22.499u -1.6,22.5u 1.6,57.5u 1.6,57.501u -1.6
+vout5 out5 0 pwl 0 -1.6,27.499u -1.6,27.5u 1.6,52.5u 1.6,52.501u -1.6
+vout6 out6 0 pwl 0 -1.6,32.499u -1.6,32.5u 1.6,47.5u 1.6,47.501u -1.6
 
 $.ic v(xsh.vc)=0
 .option post accurate probe
 .op
 .temp 27
 .tran 0.1n 80u
-.probe v(clk1) v(clk1d) v(clk2d) v(vin) v(SHout) v(out)
+.probe v(clk1) v(clk1d) v(clk2d) v(vin) v(SHout) v(xsubDAC.preout) v(out)
 .probe v(out1) v(out2) v(out3) v(out4) v(out5) v(out6)
-.probe v(xsubDAC.ina) v(xsubDAC.inb) v(xsubDAC.inc) v(xsubDAC.ind) v(xsubDAC.ine) v(xsubDAC.inf)
-.probe v(xsubDAC.fo1) v(xsubDAC.fo2) v(xsubDAC.fo3) v(xsubDAC.fo4) v(xsubDAC.fo5) v(xsubDAC.fo6)
 .measure powerall avg power
 
 .lib 'models\ms018_v1p7.lib' ff
