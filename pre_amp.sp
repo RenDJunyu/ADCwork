@@ -1,5 +1,10 @@
 .title pre_amp
-.inc 'models/misc.cdl'
+.include 'models/Bandgap.cdl'
+.include 'models/misc.cdl'
+.include 'models/OTA.cdl'
+.include 'models/SHmodel.cdl'
+.include 'models/comparator.cdl'
+.include 'models/subADAC.cdl'
 
 x1 Idc_2u gnda vdda vin vip voutn voutp pre_amp
 

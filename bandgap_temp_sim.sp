@@ -1,14 +1,19 @@
 .title bandgap temperature-coefficient spice test program (tt)
-.include 'models\Bandgap.cdl'
+.inc 'models/misc.cdl'
+.inc 'models/Bandgap.cdl'
+.inc 'models/OTA.cdl'
+.inc 'models/comparator.cdl'
+.inc 'models/subADAC.cdl'
 	$包含网表文件
-x1 gnda vdda vref Bandgap	$调用网表文件
+x1 gnda vdda vssa vref viref Bandgapb	$调用网表文件
 v1 vdda 0 3.3	$电源电压
-v2 gnda 0 0	$地电压
+v2 vssa 0 -3.3	$电源电压
+v3 gnda 0 0	$地电压
 .option post accurate probe	$仿真选项
 .op	$静态工作点分析语句
 .temp 25	$仿真温度设定语句
 .dc temp -40 125 0.1	$温度扫描设定语句
-.probe dc v(vref) i(x1.MPM3) 	$打印选定节点电压和电流语句
+.probe dc v(vref) v(viref) i(x1.MPM3) 	$打印选定节点电压和电流语句
 .meas dc max_value max v(vref) 	$测试语句，得到最大值
 .meas dc min_value min v(vref) 	$测试语句，得到最小值
 .meas dc avg_value avg v(vref) 	$测试语句，得到平均值

@@ -1,0 +1,22 @@
+bandgap_psrr_sim
+
+ psrr             temper           alter#            
+  -70.4462          25.0000        1
+
+ psrr             temper           alter#            
+  -68.5463          25.0000        2                 
+
+ psrr             temper           alter#            
+  -72.5543          25.0000        3
+
+bandgap_temp_sim 
+
+ max_value        min_value        avg_value        temp_coeff        
+ alter#            
+    1.6163           1.5794           1.5930         138.3222         1
+max_value        min_value        avg_value        temp_coeff        
+ alter#            
+    1.5917           1.5618           1.5722         113.9817         2
+max_value        min_value        avg_value        temp_coeff        
+ alter#            
+    1.6438           1.5991           1.6162         164.9133         3

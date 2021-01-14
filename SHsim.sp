@@ -6,13 +6,14 @@
 .include 'models/comparator.cdl'
 .include 'models/subADAC.cdl'
 
-xsh vddl vssl clkin vin SHout / LSH
+xsh 0 vddl vssl clkin clkin1 vin SHout / SH
 xs0 vddl vssl clkin vin out / BOOSTRAP
 
 
 vvref vref 0 1.6
 vvIref vIref 0 -1.6
 vclk clkin 0 pulse(-1.8 1.8 0.1n 0.1n 0.1n 500n 1u)
+vclk1 clkin1 0 pulse(1.8 -1.8 0.1n 0.1n 0.1n 500n 1u)
 vvddh vddh 0 3.3
 vvssh vssh 0 -3.3
 vvddl vddl 0 1.8

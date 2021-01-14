@@ -1,5 +1,9 @@
 .title bandgap psrr spice test program(tt) 
-.include 'models\Bandgap.cdl'
+.inc 'models/misc.cdl'
+.inc 'models/Bandgap.cdl'
+.inc 'models/OTA.cdl'
+.inc 'models/comparator.cdl'
+.inc 'models/subADAC.cdl'
 x1 gnda vdda vref Bandgap
 v1 vdda 0 3.3 ac 1
 v2 gnda 0 0

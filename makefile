@@ -1,6 +1,6 @@
 PATH := D:\HSPICE\hspice\BIN
 CFLAG := -o
-TARGET := test
+TARGET := subDAC
 
 $(TARGET):
 	$(PATH)\hspice $(TARGET).sp $(CFLAG)
